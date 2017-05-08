@@ -228,7 +228,7 @@ Tương tự links, hình ảnh cũng có 2 cách để tạo:
 ---
 <a name="syntaxhighlighting"></a>
 #### h. Code and Syntax Highlighting:
-Sử dụng dấu ``` đặt đầu và cuối cú pháp cần highlight.
+Sử dụng dấu ` đặt đầu và cuối cú pháp cần highlight.
 ```
 `syntax`
 ```
