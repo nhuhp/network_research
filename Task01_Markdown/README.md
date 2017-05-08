@@ -12,9 +12,17 @@
 
 [2. Sử dụng Markdown](#sudungmarkdown)
 
-- [2.1. header](#header)
-- [2.2. Các bước cài đặt](#cacbuoccaidat)
-
+- [a. Header](#header)
+- [b. Italic](#italic)
+- [c. Bold](#bold)
+- [d. Strike through](#strikethrough)
+- [e. List](#list)
+- [f. Link](#link)
+- [g. Image](#image)
+- [h. Code and Syntax Highlighting](#syntaxhighlighting)
+- [i. Blockquotes](#blockquotes)
+- [j. Tables](#table)
+- [k. Horizontal Line](#horizontalline)
 
 ---
 <a name="tongquanvemarkdown"></a>
@@ -22,12 +30,13 @@
 
 **Markdown** là một ngôn ngữ đánh dấu bằng cú pháp định dạng văn bản thuần. Nó được thiết kế để chuyển đổi qua *HTML* và nhiều định dạng khác sử dụng một công cụ cùng tên. Markdown thường được sử dụng để định dạng file *readme*, viết thông báo cho các diễn dàn trực tuyến và được tạo các siêu văn bản  sử dụng editor văn bản thuần (không biết dịch thế nào đây: plain text editor). ***John Gruber*** đã tạo ra Markdown vào năm 2004 cùng với ***Aaron Swartz***. Với mục tiêu là cho phép mọi người sử dụng một định dạng ở dạng *plain text* dễ đọc, dễ viết và tùy chọn chuyển đổi nó thành XHTML (hoặc HTML) hợp lệ.
 
+
 Một số ứng dụng sử dụng ngôn ngữ Markdown: *Github*, Gitbook, Reddit, Diaspora, Stack Overflow, OpenStreetMap và một số ứng dụng khác.
 
 <a name="sudungmarkdown"></a>
 ### 2. Sử dụng Markdown:
 
-
+<a name="header"></a>
 #### a. Header:
 
 Markdown hỗ trợ 2 kiểu viết tiêu đề: Setext và ATX.
@@ -66,7 +75,9 @@ Header2
 #### Header4
 ##### Header5
 ###### Header6
+
 ---
+<a name="italic"></a>
 #### b. Italic:
 Sử dụng ký tự `*` hoặc `_` đặt trước và sau phần muốn in nghiêng.
 
@@ -74,7 +85,9 @@ Sử dụng ký tự `*` hoặc `_` đặt trước và sau phần muốn in ngh
 `*in nghiêng*` hoặc `_in nghiêng_`
 
 *in nghiêng* hoặc _in nghiêng_
+
 ---
+<a name="bold"></a>
 #### c. Bold:
 Sử dụng ký tự `**` hoặc `__` đặt trước và sau phần muốn in đậm.
 
@@ -83,6 +96,7 @@ Sử dụng ký tự `**` hoặc `__` đặt trước và sau phần muốn in �
 **in đậm** hoặc __in đậm__
 
 ---
+<a name="strikethrough"></a>
 #### d. Strike through:
 Sử dụng ký tự `~~` đặt trước và sau phần muốn gạch giữa.
 
@@ -91,8 +105,9 @@ Sử dụng ký tự `~~` đặt trước và sau phần muốn gạch giữa.
 ~~Gạch giữa~~
 
 ---
-#### *c. Lists:
----
+<a name="list"></a>
+#### e. List:
+
 * List sử dụng số thứ tự: 
 ```
 1. Dòng 1:
@@ -102,7 +117,8 @@ Sử dụng ký tự `~~` đặt trước và sau phần muốn gạch giữa.
 1. Dòng 1:
 2. Dòng 2:
 3. Dòng 3:
----
+
+
 * List sử dụng ký hiệu:
 ```
 * Dấu sao
@@ -112,8 +128,10 @@ Sử dụng ký tự `~~` đặt trước và sau phần muốn gạch giữa.
 * Dấu sao
 + Dấu cộng
 - Dấu trừ
+
 ---
-#### e. Links:
+<a name="link"></a>
+#### f. Link:
 Có **2** cách để tạo links : ***inline-style*** và ***reference-style***
 * *inline-style*
 ```
@@ -176,7 +194,8 @@ Bấm vào [đây] để truy cập Google.
 <https://www.google.com>
 
 ---
-#### f. Image:
+<a name="image"></a>
+#### g. Image:
 Tương tự links, hình ảnh cũng có 2 cách để tạo:
 * *inline-style*
 ```
@@ -184,10 +203,10 @@ Tương tự links, hình ảnh cũng có 2 cách để tạo:
 ```
 
 ```
-![anh-dep]()
+![anh-dep](https://github.com/nhuhp/network_research/blob/master/Task01_Markdown/img/GitHub-Mark.png)
 ```
 
-![anh-dep]()
+![anh-dep](https://github.com/nhuhp/network_research/blob/master/Task01_Markdown/img/GitHub-Mark.png)
 
 Đoạn văn bản trong dấu `[]` tương đương với giá trị của thuộc tính *alt* trong thẻ `<img>` và link đặt trong dấu `()` sẽ tương đương với giá trị thuộc tính *src* trong thẻ `<img>`
 
@@ -201,53 +220,27 @@ Tương tự links, hình ảnh cũng có 2 cách để tạo:
 ```
 ![anh-dep][lb]
 
-[lb]: 
+[lb]: https://github.com/nhuhp/network_research/blob/master/Task01_Markdown/img/GitHub-Mark.png
 ```
 
-
-#### g. Code and Syntax Highlighting:
-* *Syntax Highlighting*
+---
+<a name="syntaxhighlighting"></a>
+#### h. Code and Syntax Highlighting:
+Sử dụng dấu `` `   đặt đầu và cuối cú pháp cần highlight.
 ```
-`Syntax`
-```
-
-`Syntax`
-
-* *Block Highlighting*
-
-```
-Syntax 1
-Syntax 2
-Syntax 3
-...
+`syntax`
 ```
 
+`syntax`
 
-* *Code Highlighting*
+Sử dụng dấu ` ``` ` để highlight một đoạn có nhiều dòng.
 
-````
-```language
-Code 1
-Code 2
-Code 3 
-```
-````
+Sử dụng dấu ` ``` ` kèm theo `tên ngôn ngữ` để hightlight code của ngôn ngữ đó.
 
 
-
-```
-```python
-s = 'Hello World!'
-print s
-```
-```
-
-```python
-s = 'Hello World!'
-print s
-```
-
-#### h. Blockquotes:
+---
+<a name="blockquotes"></a>
+#### i. Blockquotes:
 ```
 > quote 1
 > quote 2
@@ -262,7 +255,9 @@ print s
 > quote 4
 > ...
 
-#### i. Tables:
+---
+<a name="table"></a>
+#### j. Tables:
 Cấu trúc bảng:
 ```
 |col 1|col 2|col 3|
@@ -293,7 +288,9 @@ col 1|col 2|col 3
 a|b|c
 ```
 
-#### j. Horizontal Line: 
+---
+<a name="horizontalline"></a>
+#### k. Horizontal Line: 
 `---`
  
 ---
@@ -307,12 +304,19 @@ a|b|c
 ___
  
 
+ ---
 #### Tài liệu tham khảo:
 
-[1] Vũ Thanh Lai. Tìm hiểu về Giao thức FTP. http://sinhvienit.net/forum/tim-hieu-ve-giao-thuc-ftp.28754.html
+[1] namnguyen. Học sử dụng Markdown. https://namnguyen.gitbooks.io/hoc-su-dung-markdown/content/index.html
 
-[2] Wikipedia. FTP. https://vi.wikipedia.org/wiki/FTP
+[2] Linh Nguyễn. Markdown Là Gì. http://www.codehub.vn/Markdown-La-Gi
+
+[3] Adam Pritchard. Markdown Cheatsheet. https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+[4] https://github.com/hocchudong/git-github-for-sysadmin
+
+[5] https://help.ghost.org/hc/en-us/articles/224410728-Markdown-Guide
 
 ---
+#### Hết
 
-### Hết
