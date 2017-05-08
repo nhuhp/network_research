@@ -244,18 +244,20 @@ Sử dụng dấu ` ``` ` kèm theo `tên ngôn ngữ` để hightlight code c�
 <a name="blockquotes"></a>
 #### i. Blockquotes:
 ```
-> quote 1
-> quote 2
-> quote 3
-> quote 4
-> ...
+> Tài liệu: Tìm hiểu về Markdown	
+> 
+> Thực hiện: **Phạm Hoàng Nhu**
+> 
+> Cập nhật lần cuối: **08/05/2017**
+
 ```
 
-> quote 1
-> quote 2
-> quote 3
-> quote 4
-> ...
+> Tài liệu: Tìm hiểu về Markdown	
+> 
+> Thực hiện: **Phạm Hoàng Nhu**
+> 
+> Cập nhật lần cuối: **08/05/2017**
+
 
 ---
 <a name="table"></a>
