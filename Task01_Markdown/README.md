@@ -31,7 +31,9 @@
 **Markdown** là một ngôn ngữ đánh dấu bằng cú pháp định dạng văn bản thuần. Nó được thiết kế để chuyển đổi qua *HTML* và nhiều định dạng khác sử dụng một công cụ cùng tên. Markdown thường được sử dụng để định dạng file *readme*, viết thông báo cho các diễn dàn trực tuyến và được tạo các siêu văn bản  sử dụng editor văn bản thuần (không biết dịch thế nào đây: plain text editor). ***John Gruber*** đã tạo ra Markdown vào năm 2004 cùng với ***Aaron Swartz***. Với mục tiêu là cho phép mọi người sử dụng một định dạng ở dạng *plain text* dễ đọc, dễ viết và tùy chọn chuyển đổi nó thành XHTML (hoặc HTML) hợp lệ.
 
 
-Một số ứng dụng sử dụng ngôn ngữ Markdown: *Github*, Gitbook, Reddit, Diaspora, Stack Overflow, OpenStreetMap và một số ứng dụng khác.
+Một số ứng dụng sử dụng ngôn ngữ Markdown: *Github*, Gitbook, Reddit, Diaspora, Stack Overflow, OpenStreetMap,...
+
+Phần mở rộng của markdown: `.md`
 
 <a name="sudungmarkdown"></a>
 ### 2. Sử dụng Markdown:
@@ -226,7 +228,7 @@ Tương tự links, hình ảnh cũng có 2 cách để tạo:
 ---
 <a name="syntaxhighlighting"></a>
 #### h. Code and Syntax Highlighting:
-Sử dụng dấu `` `   đặt đầu và cuối cú pháp cần highlight.
+Sử dụng dấu ``` đặt đầu và cuối cú pháp cần highlight.
 ```
 `syntax`
 ```
