@@ -153,6 +153,7 @@ VD:
 Kết quả:
 
 [Đây là đường dẫn đến Google](https://www.google.com)
+
 [Đây là đường dẫn đến Google](https://www.google.com "Tìm kiếm bằng Google")
 
 * *reference-style*
@@ -240,6 +241,7 @@ VD:
 <a name="syntaxhighlighting"></a>
 #### h. Code and Syntax Highlighting:
 Sử dụng dấu ` đặt đầu và cuối cú pháp cần highlight.
+
 VD:
 ```
 `syntax`
@@ -250,6 +252,7 @@ Kết quả:
 `syntax`
 
 Sử dụng dấu ` ``` ` để highlight một đoạn có nhiều dòng.
+
 Sử dụng dấu ` ``` ` kèm theo `tên ngôn ngữ` để hightlight code của ngôn ngữ đó.
 
 <a name="blockquotes"></a>
@@ -280,9 +283,9 @@ Cấu trúc bảng:
 |a|b|c|
 
 ```
-Hàng đầu tiên, định danh của các cột
+Hàng đầu tiên, định danh của các cột.
 
-Hàng thứ hai, canh lề cho từng cột
+Hàng thứ hai, canh lề cho từng cột.
 
 `:-----` hoặc `-----` dùng để canh trái.
 
@@ -308,13 +311,29 @@ a|b|c
 
 <a name="horizontalline"></a>
 #### k. Horizontal Line: 
-`---`
+
+VD:
+
+```
+dấu gạch ngang
 ---
-`***`
+
+dấu sao
 ***
-`___`
+
+dấu gạch dưới
 ___
- 
+```
+
+dấu gạch ngang
+---
+
+dấu sao
+***
+
+dấu gạch dưới
+___
+
 ### Tài liệu tham khảo:
 
 [1] namnguyen. Học sử dụng Markdown. https://namnguyen.gitbooks.io/hoc-su-dung-markdown/content/index.html
