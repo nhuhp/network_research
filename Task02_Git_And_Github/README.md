@@ -6,27 +6,6 @@
 > 
 > Cập nhật lần cuối: **10/05/2017**
 
-**Nội dung công việc:**
-
-- Tìm hiểu cách thức hoạt động của Github.
-- Hiểu được các khái niệm: Add, Remove, Commit, Push, Pull, Fetch, Clone, Fork, Star, Watch.
-- Tìm hiểu các bước để Setting up Git, Generate and add SSH key, Caching your GitHub password in Git.
-- Viết lại báo cáo ngắn gọn các phần ở trên.
-- Lưu trữ repository: `../Task02_Git_And_Github/README.md`. **Chú ý có thư mục**.
-
-**Tham khảo:**
-
-[1] http://rogerdudler.github.io/git-guide/index.vi.html
-
-[2] https://github.com/hocchudong/git-github-for-sysadmin
-
-[3] https://help.github.com/articles/set-up-git/
-
-[4] https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-
-[5] https://help.github.com/articles/caching-your-github-password-in-git/
-
-
 ### Mục lục
 
 [1. Git và Github](#gitvagithub)
@@ -139,7 +118,9 @@
 #### 3.3. Liên kết tài khoản github bằng SSH:
 
 ### Tài liệu tham khảo:
+
 [1] Wikipedia. Git. https://en.wikipedia.org/wiki/Git
+
 [2]	Thạch Phạm. Series Git Cơ Bản. https://thachpham.com/tools/git-gioi-thieu-serie-git-co-ban.html
 ---
 
