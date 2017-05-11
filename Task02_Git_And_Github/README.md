@@ -170,18 +170,18 @@ $ ssh-keygen -t rsa
 ```
 * Thiết lập file lưu key. Nhấn *Enter* để sử dụng thiết lập mặc định. 
 
-![file-save]()
+![file-save](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/file-save.png)
 
 * Thiết lập mật khẩu cho key. Nhập vào và **ghi nhớ** mật khẩu này. Sau quá trình này, có 2 file được tạo ra. 1 file lưu *private key*, 1 file lưu *public key*.
 
-![passphrase]()
+![passphrase](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/passphrase.png)
 
 * Thêm SSH key vào *ssh-agent*. Đầu tiên khởi động ssh-agent.
 ```
 ssh-agent -s
 ```
 
-![ssh-agent]()
+![ssh-agent](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/ssh-agent.png)
 
 * Sau đó, thêm private key được lưu trong file `id_rsa` vào ssh-agent. Khi được yêu cầu nhập mật khẩu, hãy nhập mật khẩu vừa tạo ở trên.
 ```
@@ -190,21 +190,21 @@ ssh-add ~/.ssh/id_rsa
 
 * Cuối cùng, mở file `id_rsa.pub` chứa public key và copy toàn bộ đoạn key này.
 
-![public-key]()
+![public-key](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/public-key.png)
 
 <a name="addkey"></a>
 ##### 3.3.2. Add SSH key:
-* Đăng nhập vào <https://github.com/>, vào *Settings*, ở mục *SSH and GPG keys*. Chọn **New SSH key**
+* Đăng nhập vào <https://github.com/>, vào *Settings*, ở mục *SSH and GPG keys*. Chọn **New SSH key**.
 
-![new-ssh-key]()
+![new-ssh-key](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/new-ssh-key.png)
 
 * Đặt tên cho key ở ô *Title* và dán nội dung key vừa copy ở phần trên vào ô *Key*. Sau đó, chọn *Add SSH key*.
 
-![add-ssh-key]()
+![add-ssh-key](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/add-ssh-key.png)
 
 * Cuối cùng, ta được:
 
-![fingerprint]()
+![fingerprint](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/fingerprint.png)
 
 <a name="caching"></a>
 ##### 3.3.3. Caching Github password in Git:
