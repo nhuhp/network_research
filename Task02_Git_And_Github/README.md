@@ -96,7 +96,8 @@
 * Vào GitHub, chọn **New Repository**.
 * Sau đó, đặt tên cho repository. Cuối cùng, chọn *Create Repository*
 
-![new-repository](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/new-repository.png)
+![new-repository](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/new-repo.png)
+
 * Trên local, có thể tạo Repository mới bằng cách dùng lệnh `git init <tên-repository>`
 <a name="add"></a>
 #### 2.2. Add:
