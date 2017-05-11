@@ -4,7 +4,7 @@
 > 
 > Thực hiện: **Phạm Hoàng Nhu**
 > 
-> Cập nhật lần cuối: **10/05/2017**
+> Cập nhật lần cuối: **11/05/2017**
 
 ### Mục lục
 
@@ -15,27 +15,29 @@
  
 - [1.3 Github](#github)
 
-[2. Một số lệnh cơ bản của Git](#motsolenhcobancuagit)
+[2. Một số lệnh cơ bản của Git](#motsothaotaccobantrengit)
 
-- [2.1. Add](#add)
+- [2.1. Tạo Repository](#taorepo)
 
-- [2.2. Remove](#remove)
+- [2.2. Add](#add)
 
-- [2.3. Commit](#commit)
+- [2.3. Remove](#remove)
 
-- [2.4. Push](#push)
+- [2.4. Commit](#commit)
 
-- [2.5. Fetch](#fetch)
+- [2.5. Push](#push)
 
-- [2.6. Clone](#clone)
+- [2.6. Fetch](#fetch)
 
-- [2.7. Fork](#fork)
+- [2.7. Clone](#clone)
 
-- [2.8. Star](#star)
+- [2.8. Fork](#fork)
 
-- [2.9. Watch](#watch)
+- [2.9. Star](#star)
 
-- [3.10. Pull](#pull)
+- [2.10. Watch](#watch)
+
+- [3.11. Pull](#pull)
 
 [3. Cài đặt Git, Generate, add SSH Key](#caidatgitgenerateaddsshkey)
 
@@ -55,8 +57,8 @@
 
 <a name="gitvagithub"></a>
 ### 1. Git và Github:
-
 <a name="git"></a>
+
 #### 1.1. Git:
 * Git là một **hệ thống quản lý phiên bản phân tán** (Distributed Version Control System - DVCS) để theo dõi các thay đổi trong các tập tin trên máy tính và phối hợp làm việc với những tập tin đó. Nó chủ yếu được sử dụng trong phát triển phần mềm, nhưng nó cũng được sử dụng để theo dõi sự thay đổi trong bất kỳ tập tin. 
 * Git được tạo ra bởi *Linus Torvalds* năm 2005.
@@ -70,6 +72,15 @@
 	
 <a name="cochehoatdongcuagit"></a>
 #### 1.2. Cơ chế hoạt động của Git:
+* Trên máy tính, có 3 khu vực làm việc với Git là:
+	+ Working Directory: nơi chứa các tập tin, cũng là nơi bạn làm việc với tập tin.
+	+ Staging Area: là nơi lưu trữ những thay đổi trên tập tin.
+	+ Local Repository: kho lưu trữ mã nguồn trên máy tính. 
+* Đầu tiên, từ Working Directory, tập tin được đưa vào Staging Area bằng hành động `add`.
+* Tại Staging Area, những thay đổi của tập tin sẽ lưu lại. Dùng `commit` để đưa tập tin qua Local Repository.
+* Sau khi liên kết với một Remove Repository (chẳng hạn như GitHub), tập tin sẽ được đưa lên Remote Repository bằng `push`. 
+
+![gitoperation](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/git-staging-area.png)
 
 <a name="github"></a>
 #### 1.3. Github:
@@ -77,39 +88,67 @@
 * GitHub cung cấp cả phiên bản trả tiền lẫn miễn phí cho các tài khoản. Các dự án mã nguồn mở sẽ được cung cấp kho lưu trữ miễn phí. 
 * Người sử dụng phải tạo ra một tài khoản để có thể đóng góp nội dung cho Github, nhưng bất kỳ ai cũng có thể tải về và sử dụng các kho mã nguồn công khai.
 
-<a name="motsolenhcobancuagit"></a>
-### 2. Một số lệnh cơ bản của Git:
+<a name="motsothaotaccobantrengit"></a>
+### 2. Một số thao tác cơ bản trên Git:
 
+<a name="taorepo"></a>
+#### 2.1. Tạo Repository:
+* Vào GitHub, chọn **New Repository**.
+* Sau đó, đặt tên cho repository. Cuối cùng, chọn *Create Repository*
+
+![new-repository](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/new-repository.png)
+* Trên local, có thể tạo Repository mới bằng cách dùng lệnh `git init <tên-repository>`
 <a name="add"></a>
-#### 2.1. Add:
-
+#### 2.2. Add:
+* Để add một tập tin, dùng lệnh: `git add <tên-tập-tin>`
+* Để add tất cả tập tin, dùng lệnh: `git add *`
 <a name="remove"></a>
-#### 2.2. Remove:
-
+#### 2.3. Remove:
+Trên GitHub, để remote một repository, vào phần *Settings* của repository đó, chọn **Delete this repository**.
 <a name="commit"></a>
-#### 2.3. Commit:
-
+#### 2.4. Commit:
+* Thực hiện commit một tập tin, sử dụng lệnh: `git commit -m "Messages"`
+* Thực hiện commit cho tất cả các tập tin: `git commit *`
 <a name="push"></a>
-#### 2.4. Push:
-
+#### 2.5. Push:
+* Sau khi commit, các tâp tin được đưa vào Local Repository. Để đưa nội dung lên Remote Repository, sử dụng lệnh: 
+```
+git push origin master
+```
 <a name="fetch"></a>
-#### 2.5. Fetch:
-
+#### 2.6. Fetch:
+* Lệnh này sẽ truy cập vào remote repository và kéo xuống toàn bộ dữ liệu mà local không có. Sau khi thực hiện xong bước này, bạn đã có các tham chiếu đến toàn bộ các nhánh của dự án từ xa đó.
+```
+git fetch <remote-name>
+```
 <a name="clone"></a>
-#### 2.6. Clone:
-
+#### 2.7. Clone:
+* Để clone một remote repository về local, có thể sử dụng HTTPS hoặc SSH.
+```
+git clone <repository-url> <đường dẫn đến thư mục chứa trên local>
+```
 <a name="fork"></a>
-#### 2.7. Fork:
+#### 2.8. Fork:
+* Fork một repository là sao chép repository đó về repository của mình và có thể thực hiện những thay đổi repository đó mà không ảnh hưởng đến repository gốc.
+* Sử dụng lệnh:
+```
+git remote add upstream <url-repository-gốc>
 
+git fetch upstream
+```
+* Hoặc nhấn vào biểu tượng **Fork** trên repository đã chọn.
 <a name="star"></a>
-#### 2.8. Star:
-
+#### 2.9. Star:
+* Star một repository trong github thể hiện cho việc repository này được nhiều người quan tâm, theo dõi. Đây cũng là cách để tăng khả năng xuất hiện của repository mình trên github.
+* Để thực hiện, nhấn vào biểu tượng **Star** trên repository đã chọn.
 <a name="watch"></a>
-#### 2.9. Watch:
-
+#### 2.10. Watch:
+* Watch cho phép bạn thông báo các yêu cầu mới hay các vấn đề xảy ra với repository đó.
+* Để thực hiện, nhấn vào biểu tượng **Watch** trên repository đã chọn.
 <a name="pull"></a>
-#### 2.10. Pull:
-
+#### 2.11. Pull:
+* Pull dùng để cập nhật những thay đổi và các commit mới nhất từ Remote Repository về Local Repository.
+Để thực hiện, sử dụng lệnh: `git pull`
 <a name="caidatgitgenerateaddsshkey"></a>
 ### 3. Cài đặt Git, Generate, add SSH Key:
 
@@ -208,6 +247,16 @@ ssh-add ~/.ssh/id_rsa
 
 <a name="caching"></a>
 ##### 3.3.3. Caching Github password in Git:
+* Nếu bạn clone kho lưu trữ GitHub bằng HTTPS, bạn có thể sử dụng một *credential helper* để yêu cầu Git lưu lại username và password để tiện cho những lần làm việc tiếp theo.
+	+ Sử dụng credential helper bằng lệnh:
+		```
+		git config --global credential.helper cache
+		```
+	+ Credential helper mặc định sẽ cache password với thời gian là 15 phút. Để thay đổi thời gian này dùng lệnh:
+		```
+		git config --global credential.helper 'cache --timeout=3600'
+		```
+* Nếu bạn clone kho lưu trữ GitHub bằng SSH, thì bạn sẽ xác thực bằng *SSH key* thay vì sử dụng username và password.
 
 ### Tài liệu tham khảo:
 
@@ -218,6 +267,8 @@ ssh-add ~/.ssh/id_rsa
 [3] GitHub Help. https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
 [4] https://github.com/hocchudong/git-github-for-sysadmin
+
+[5] https://help.github.com/articles/caching-your-github-password-in-git/
 
 ---
 
