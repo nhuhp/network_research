@@ -15,7 +15,7 @@
  
 - [1.3 Github](#github)
 
-[2. Một số lệnh cơ bản của Git](#motsothaotaccobantrengit)
+[2. Một số thao tác cơ bản trên Git](#motsothaotaccobantrengit)
 
 - [2.1. Tạo Repository](#taorepo)
 
@@ -270,6 +270,8 @@ ssh-add ~/.ssh/id_rsa
 [4] https://github.com/hocchudong/git-github-for-sysadmin
 
 [5] https://help.github.com/articles/caching-your-github-password-in-git/
+
+[6] http://rogerdudler.github.io/git-guide/index.vi.html
 
 ---
 
