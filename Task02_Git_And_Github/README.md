@@ -45,6 +45,12 @@
 
 - [3.3. Liên kết tài khoản github bằng SSH](#lienkettaikhoan)
 
+	+ [3.3.1. Generating a new SSH key](#generateing)
+	
+	+ [3.3.2. Add SSH key](#addkey)
+	
+	+ [3.3.3. Caching Github password in Git](#caching)
+
 ---
 
 <a name="gitvagithub"></a>
@@ -55,7 +61,6 @@
 * Git là một **hệ thống quản lý phiên bản phân tán** (Distributed Version Control System - DVCS) để theo dõi các thay đổi trong các tập tin trên máy tính và phối hợp làm việc với những tập tin đó. Nó chủ yếu được sử dụng trong phát triển phần mềm, nhưng nó cũng được sử dụng để theo dõi sự thay đổi trong bất kỳ tập tin. 
 * Git được tạo ra bởi *Linus Torvalds* năm 2005.
 * Git là một phần mềm miễn phí được phân phối dưới các điều khoản của GNU General Public License version 2.
-* Git có khả năng chạy trên nhiều hệ điều hành khác nhau như Linux, Windows, Mac OSX, ...
 * Có thể hiểu cách hoạt động của Git như sau:
 	Git giúp lưu lại các thay đổi phiên bản bằng cách tạo ra một **snapshot** trên mỗi tập tin và thư mục sau khi commit, từ đó có thể dễ dàng khôi phục phiên bản đó bằng cách tái sử dụng lại snapshot đó. Một người khác có thể xem các thay đổi của bạn ở từng phiên bản, họ có thể đối chiếu các thay đổi của bạn rồi gộp phiên bản của bạn và phiên bản của họ vào với nhau. Cuối cùng, tất cả có thể đưa các thay đổi vào mã nguồn của mình lên một kho chứa mã nguồn.
 * Tại sao nên sử dụng Git?
@@ -110,18 +115,109 @@
 
 <a name="caidatgit"></a>
 #### 3.1. Cài đặt Git:
-
+* Git có khả năng chạy trên nhiều hệ điều hành khác nhau như Linux, Windows, Mac OSX, ...
+* Trên Windows:
+	+ Yêu cầu máy tính phải cài đặt **.NET 4.5** trở lên.
+	+ Vào đường dẫn này để tải Git cho máy tính: <https://git-scm.com/download/win>
+	+ Sau khi tải Git, cài đặt và sử dụng bình thường.
+* Trên Linux:
+	+ Sử dụng các lệnh sau để cài đặt Git:
+	+ Đối với Debian/Ubuntu:
+	```
+	$ apt-get install git
+	```
+	+ Đối với Centos/Fedora (tính đến Fedora 21):
+	```
+	$ yum install git
+	```
+	+ Đối với Fedora 22 trở đi:
+	```
+	$ dnf install git
+	```
+	+ Đối với ArchLinux:
+	```
+	$ pacman -S git
+	```
+* Trên Mac OSX:
+	+ Tải gói cài đặt tại đường dẫn sau để cài đặt: <https://git-scm.com/download/mac>
+	
 <a name="cacthietlapbandau"></a>
 #### 3.2. Các thiết lập ban đầu:
+* Sau khi cài Git xong, việc đầu tiên là thiết lập tên và địa chỉ email sử dụng cho git.
+```
+git config --global user.name "tên/username"
+git config --global user.email "email sử dụng cho git"
+```
+
+* Lựa chọn trình soạn thảo mặc định, có thể là vi, vim, nano,...
+```
+git config --global core.editor vi
+```
+
+* Liệt kê các thiết lập đã làm:
+```
+git config --list
+```
 
 <a name="lienkettaikhoan"></a>
 #### 3.3. Liên kết tài khoản github bằng SSH:
+
+<a name="generateing"></a>
+##### 3.3.1. Generating a new SSH key:
+* Tạo SSH key mới: 
+```
+$ ssh-keygen -t rsa
+```
+* Thiết lập file lưu key. Nhấn *Enter* để sử dụng thiết lập mặc định. 
+
+![file-save]()
+
+* Thiết lập mật khẩu cho key. Nhập vào và **ghi nhớ** mật khẩu này. Sau quá trình này, có 2 file được tạo ra. 1 file lưu *private key*, 1 file lưu *public key*.
+
+![passphrase]()
+
+* Thêm SSH key vào *ssh-agent*. Đầu tiên khởi động ssh-agent.
+```
+ssh-agent -s
+```
+
+![ssh-agent]()
+
+* Sau đó, thêm private key được lưu trong file `id_rsa` vào ssh-agent. Khi được yêu cầu nhập mật khẩu, hãy nhập mật khẩu vừa tạo ở trên.
+```
+ssh-add ~/.ssh/id_rsa
+```
+
+* Cuối cùng, mở file `id_rsa.pub` chứa public key và copy toàn bộ đoạn key này.
+
+![public-key]()
+
+<a name="addkey"></a>
+##### 3.3.2. Add SSH key:
+* Đăng nhập vào <https://github.com/>, vào *Settings*, ở mục *SSH and GPG keys*. Chọn **New SSH key**
+
+![new-ssh-key]()
+
+* Đặt tên cho key ở ô *Title* và dán nội dung key vừa copy ở phần trên vào ô *Key*. Sau đó, chọn *Add SSH key*.
+
+![add-ssh-key]()
+
+* Cuối cùng, ta được:
+
+![fingerprint]()
+
+<a name="caching"></a>
+##### 3.3.3. Caching Github password in Git:
 
 ### Tài liệu tham khảo:
 
 [1] Wikipedia. Git. https://en.wikipedia.org/wiki/Git
 
 [2]	Thạch Phạm. Series Git Cơ Bản. https://thachpham.com/tools/git-gioi-thieu-serie-git-co-ban.html
+
+[3] GitHub Help. https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+
+[4] https://github.com/hocchudong/git-github-for-sysadmin
 
 ---
 
