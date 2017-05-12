@@ -228,6 +228,8 @@ ssh-agent -s
 ssh-add ~/.ssh/id_rsa
 ```
 
+![ssh-add](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/ssh-add.png)
+
 * Cuối cùng, mở file `id_rsa.pub` chứa public key và copy toàn bộ đoạn key này.
 
 ![public-key](https://github.com/nhuhp/network_research/blob/master/Task02_Git_And_Github/img/public-key.png)
