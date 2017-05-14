@@ -4,7 +4,7 @@
 > 
 > Thực hiện: **Phạm Hoàng Nhu**
 > 
-> Cập nhật lần cuối: **13/05/2017**
+> Cập nhật lần cuối: **14/05/2017**
 ### Mục lục
 
 [1. Mục đích của Mạng Máy Tính](#mucdichcuamang)
@@ -13,11 +13,13 @@
 - [1.3. Người dùng di động](#nguoidungdidong)
 - [1.4. Những vấn đề xã hội](#nhungvandexahoi)
 - [1.5. Tính bình đẳng của mạng](#tinhbinhdangcuamang)
+
 [2. Phần cứng của Mạng](#phancung)
 - [2.1. Personal Area Networks](#pan)
 - [2.2. Local Area Networks](#lan)
 - [2.3. Metropolitan Area Networks](#man)
 - [2.4. Wide Area Networks](#wan)
+
 [3. Phần mềm của Mạng](#phanmem)
 [4. Mô hình tham chiếu](mohinhthamchieu)
 [5. Ví dụ về Mạng](#viduvemang)
