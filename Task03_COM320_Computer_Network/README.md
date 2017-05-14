@@ -21,9 +21,13 @@
 - [2.4. Wide Area Networks](#wan)
 
 [3. Phần mềm của Mạng](#phanmem)
-[4. Mô hình tham chiếu](mohinhthamchieu)
+
+[4. Mô hình tham chiếu](#mohinhthamchieu)
+
 [5. Ví dụ về Mạng](#viduvemang)
+
 [6. Chuẩn hóa Mạng](#chuanhoamang)
+
 [7. Đơn vị Metric](#donvimetric)
 
 
