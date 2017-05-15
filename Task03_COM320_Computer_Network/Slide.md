@@ -28,12 +28,21 @@
 - [3.5. Quan hệ giữa dịch vụ và giao thức](#quanhegiuadichvuvagiaothuc)
 
 [4. Mô hình tham chiếu](#mohinhthamchieu)
-
+- [4.1. Mô hình tham chiếu OSI](#mohinhthamchieuosi)
+- [4.2. Mô hình tham chiếu TCP/IP](#mohinhthamchieutcpip)
+- [4.3. Mô hình sử dụng trong tài liệu này](#mohinhsudungtrongtailieunay)
+- [4.4. Nhận xét mô hình OSI và TCP/IP](#nhanxetmohinhosivatcpip) 
 [5. Ví dụ về Mạng](#viduvemang)
-
+- [5.1. Internet](#internet)
+- [5.2. Mạng điện thoại di động 3G](#mangdienthoaididong3g)
+- [5.3. Mạng LAN không dây](#manglankhongday)
+- [5.4. RFID và mạng cảm biến](#rfidvamangcambien)
+- [5.5. Peer to Peer](#peertopeer)
 [6. Chuẩn hóa Mạng](#chuanhoamang)
 
-[7. Đơn vị Metric](#donvimetric)
+[7. Bảo mật](#baomat)
+
+[8. Đơn vị Metric](#donvimetric)
 
 
 ---
@@ -286,15 +295,151 @@
 |2|Data link|Gửi frame Thông tin|
 |1|Physical|Gửi bit tín hiệu|
 
+<a name="mohinhthamchieutcpip"></a>
+##### 4.2. Mô hình tham chiếu TCP/IP
+* Mô hình 4 tầng có nguồn gốc từ thực nghiệm; bỏ qua một số tầng OSI và sử dụng IP (Internet Protocol) làm tầng Network.
+
+![tcp-ip](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/tcp-ip.png)
+
+<a name="mohinhsudungtrongtailieunay"></a>
+##### 4.3. Mô hình sử dụng trong tài liệu này.
+* Dựa trên mô hình TCP/IP, nhưng có thêm tầng *Physical* và xem xét *Internet protocols* kỹ hơn.
+
+![thismodel](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/thismodel.png)
+
+<a name="nhanxetmohinhosivatcpip"></a>
+##### 4.4. Nhận xét mô hình OSI và TCP/IP
+* OSI:
+	+ Ưu điểm: Mô hình có tầm ảnh hưởng với những khái niệm rõ ràng.
+	+ Hạn chế: Mô hình, các giao thức đều lún sâu vào các chính sách và độ phức tạp.
+* TCP/IP:
+	+ Ưu điểm: Các giao thức có kết quả tốt, làm việc hiệu quả.
+	+ Mô hình yếu có nguồn gốc sau thực tế từ các giao thức.
+
 <a name="viduvemang"></a>
 #### 5. Ví dụ về Mạng
+* Internet
+* Mạng điện thoại di động 3G
+* Mạng LAN không dây
+* RFID và mạng cảm biến
+
+<a name="internet"></a>
+##### 5.1. Internet
+* Trước Internet là **ARPANET**, một hệ thống mạng chuyển mạch phân cấp, dựa trên ý tưởng của Baran.
+
+![arpanet](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/arpanet.png)
+
+* Internet trước đây sử dụng NSFNET(1985-1995) làm xương sống; các trường đại học kết nối để đi Internet.
+
+![nsfnet](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/nsfnet.png)
+
+* Internet hiện đại thì phức tạp hơn nhiều:
+	+ Các mạng ISP được xem như xương sống của Internet.
+	+ Các ISP kết nối để trao đổi lưu lượng tại các IXP.
+	+ Mỗi Router có thể chuyển mạch gói tin.
+	+ Giữa các mạng, việc trao đổi lưu lượng được thiết lập bởi các hiệp định thương mai.
+	+ Khách hàng kết nối tại phần Rìa mạng bằng nhiều phương tiện - Cáp, DSL, Fiber-to-the-home, mạng không dây 3G/4G, Dial-up.
+	+ Các trung tâm dữ liệu tập trung nhiều server ("the cloud").
+	+ Hầu hết các lưu lượng là nội dụng từ các trung tâm dữ liệu (đặc biệt là video).
+	+ Kiến trúc mạng tiếp tục cải tiến.
+	
+* Kiến trúc của Internet
+
+![internet-architecture](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/internet-architecture.png)
+
+* Mạng lưới của Nhà Cung cấp Dịch vụ Internet (ISP - Internet Service Provider) có thể trong phạm vi khu vực, quốc gia hoặc quốc tế.
+* Nếu một gói tin được định tuyến đến một host được ISP  trực tiếp phục vụ, gói tin đó sẽ đi qua vùng xương sống và đi đến host đó.
+* Còn không, nó sẽ phải được bàn giao qua những ISP khác. Các ISP kết nối với mạng lưới của họ để trao đổi lưu lượng tại các IXP (Internet eXchange Points).
+
+![isp](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/isp.png)
+
+<a name="mangdienthoaididong3g"></a>
+##### 5.2. Mạng điện thoại di động 3G
+* Mạng 3G được dựa trên các tế bào sóng trong không gian; mỗi tế bào cung cấp dịch vụ không dây cho các thiệt bị di động trong vùng thông qua một trạm gốc.
+
+
+![cell](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/cell.png)
+
+* Trạm gốc kết nối với hệ thống mạng lõi để tìm kiếm các thiết bị di động khác và gửi dữ liệu về mạng điện thoại và Internet.
+
+![basestation](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/basestation.png)
+
+* Khi thiết bị di động di chuyển, các trạm gốc sẽ bàn giao cho các trạm tiếp theo và mạng lưới sẽ theo dõi vị trí của họ.
+
+![move-mobiles](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/move-mobiles.png)
+
+<a name="manglankhongday"></a>
+##### 5.3. Mạng LAN không dây
+* Trong chuẩn 802.11, các client giao tiếp thông qua một AP (Access Point) được nối dây với phần còn lại của mạng.
+
+![access-point](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/access-point.png)
+
+* Tín hiệu trong băng tần ISM 2.4Ghz khác nhau về cường độ do nhiều tác động, chẳng hạn như sự biến dạng nhiều đường đi do phản xạ - đòi hỏi phải có những thiết kế truyền phức tạp, ví dụ như OFDM.
+
+![multipath](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/multipath.png)
+
+* Việc phát sóng có thể can thiệp lẫn nhau, và vùng phủ sóng có thể chồng lên nhau - CSMA (Carrier Sense Multiple Access) được sử dụng.
+
+![radio-broadcast](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/radio-broadcast.png)
+
+<a name="rfidvamangcambien"></a>
+##### 5.4. RFID và mạng cảm biến
+* Những đối tượng trong mạng UHF RFID:
+	+ Tags (miếng dán không sử dụng pin) được đặt trên vật thể.
+	+ Máy đọc gửi tín hiệu mà tags phản chiếu để giao tiếp.
+	
+	![rfid](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/rfid.png)
+	
+* Mạng cảm biến lan truyền các thiết bị nhỏ trên một khu vực:
+	+ Các thiết bị gửi dữ liệu về bộ thu thông qua công nghệ không dây.
+	
+	![sensor-network](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/sensor-network.png)
+
+<a name="peertopeer"></a>
+##### 5.5. Peer to Peer
+* Mạng máy tính Peer-to-peer (viết tắt là P2P) là mạng mà mỗi máy tính trong máy có thể đóng vai trò client và server, cho phép chia sẻ truy cập đến nhiều nguồn tài nguyên như là các tập tin, các thiết bị ngoại vi và các cảm biến mà không cần đến một server trung tâm.
+* Mạng P2P có thể được sử dụng để chia sẻ âm thanh, video, dữ liệu hoặc bất cứ thứ gì ở định dạng số.
+* Nhiều hệ thống peer-to-peer, chẳng hạn như BitTorrent, không có bất kỳ trung tâm dữ liệu nào. Thay vào đó, mỗi người dùng sẽ duy trì cơ sở dữ liệu riêng và cung cấp một danh sách những người ở gần đó là thành viên của hệ thống.
+* Peer là những người tham gia có quyền bình đẳng như nhau. Mỗi máy tính trong mạng được gọi là một node.
+* Chủ sở hữu của mỗi máy tính trong mạng P2P sẽ dành một phần tài nguyên máy tính - chẳng hạn như tốc độ xử lý, vùng lưu trữ hoặc băng thông - để cung cấp trực tiếp cho người tham gia khác mà không cần phải có sự phối hợp giữa các server hay các host.
+* Với mô hình này, mỗi người vừa là nhà cung cấp, vừa là người tiêu thụ tài nguyên. Ngược lại ở mô hình client - server, nơi mà server chỉ cung cấp (gửi) và client chỉ tiêu thụ (nhận).
 
 <a name="chuanhoamang"></a>
 #### 6. Chuẩn hóa Mạng
+* Các tiêu chuẩn xác định những gì cần thiết cho khả năng tương tác.
+* Một số trong rất nhiều tiêu chuẩn:
+||Lĩnh vực|Ví dụ|
+|---|---|---|
+|ITU|Viễn thông|G.992,ADSL,H.264,MPEG4|
+|IEEE|Truyền thông|802.3,Ethernet,802.11,Wifi|
+|IETF|Internet|RFC 2616, HTTP/1.1,RFC 1034/1035,DNS|
+|W3C|Web|tiêu chuẩn HTML5, tiêu chuẩn CSS|
+
+<a name="baomat"></a>
+#### 7. Bảo mật
+* Chúng ta bắt đầu từ đâu?
+* Ví dụ: Phishing
+* Giả mạo Thông tin có nguồn gốc từ một bên đáng tin cây, ví dụ, ngân hàng của bạn, cố lừa bạn để lộ những thông tin nhạy cảm như số tài khoản thẻ tín dụng.
+* Những công cụ tấn công: DDoS, Passwords, Hashing, PGP, Encryption, Cryptography,...
+* Lĩnh vực an ninh mạng:
+	+ Kẻ xấu có thể tấn công mạng máy tính như thế nào.
+	+ Làm thế nào để chúng ta có thể bảo vệ mạng không bị tấn công.
+	+ Cách thiết kế kiến trúc mạng để miễn dịch với các cuộc tấn công.
+* Ban đầu Internet không được thiết kế với (nhiều) bảo mật như người ta cứ nghĩ.
+	+ Tầm nhìn ban đầu: "Một nhóm người dùng sự tin tưởng lẫn nhau, gắn liền với một mạng lưới minh bạch".
+	+ Các nhà thiết kế giao thức Internet chơi "catch-up".
+	+ Xem xét về bảo mật trong tất cả các lớp.
+* Kẻ xấu: đưa phần mềm độc hại vào các host thông qua Internet.
+	+ Phần mềm độc hại có thể đi vào các host bằng một *virus*, *worm* hoặc *Trojan horse*.
+	+ Phần mềm gián điệp, phần mềm độc hại có thể ghi lại thao tác bàn phím, các trang web đã truy cập,...
+	+ Những host bị lây nhiễm có thể bị đưa vào mạng botnet, được sử dụng để *spam* hay *tấn công DDoS*.
+	+ Phần mềm độc hại thường có khả năng tự sao chép: từ một host lây nhiễm, xâm nhập vào các máy khác.
+	
+	
 
 <a name="donvimetric"></a>
-#### 7. Đơn vị Metric
-
+#### 8. Đơn vị Metric
+* 
 
 ---
 
