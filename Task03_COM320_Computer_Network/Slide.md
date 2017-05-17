@@ -410,6 +410,7 @@
 #### 6. Chuẩn hóa Mạng
 * Các tiêu chuẩn xác định những gì cần thiết cho khả năng tương tác.
 * Một số trong rất nhiều tiêu chuẩn:
+
 ||Lĩnh vực|Ví dụ|
 |---|---|---|
 |ITU|Viễn thông|G.992,ADSL,H.264,MPEG4|
