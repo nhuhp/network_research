@@ -64,7 +64,7 @@
 ##### 1.1. Ứng dụng thương mại
 * Nhiều công ty sử dụng mạng và máy tính để chia sẻ *tài nguyên* bằng mô hình **client - server**:
 
-![client-server](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/client-server.png)
+![client-server](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/client-server.png)
 
 * Những mục đích phổ biến khác là để giao tiếp, ví dụ email, VoIP và thương mại điện tử.
 
@@ -77,7 +77,7 @@
 	+ Thực hiện giao dịch, ví dụ: đấu giá.
 * Một số ứng dụng mô hình ngang hàng (peer-to-peer), trong đó không có client và server:
 
-![peer-to-peer](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/peer-to-peer.png)
+![peer-to-peer](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/peer-to-peer.png)
 
 <a name="nguoidungdidong"></a>
 ##### 1.3. Người dùng di động
@@ -127,7 +127,7 @@
 * Kết nối những thiết bị trong khu vực xung quanh một người.
 * Ví dụ : Bluetooth
 
-![bluetooth](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/bluetooth.png)
+![bluetooth](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/bluetooth.png)
 
 <a name="lan"></a>
 ##### 2.2. Local Area Networks
@@ -135,29 +135,29 @@
 * Được gọi là mạng doanh nghiệp trong một công ty.
 * Phần lớn sử dụng cáp đồng nhưng một vài sử dụng Cáp Quang.
 
-![lan](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/lan.png)
+![lan](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/lan.png)
 
 <a name="man"></a>
 ##### 2.3. Metropolitan Area Networks
 * Kết nối những thiết bị trong khu vực đô thị.
 * Ví dụ: MAN dựa trên hệ thống truyền hình cáp.
 
-![man](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/man.png)
+![man](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/man.png)
 
 <a name="wan"></a>
 ##### 2.4. Wide Area Networks
 * Kết nối những thiết bị trong khu vực một quốc qua.
 * Ví dụ: WAN kết nối 3 văn phòng chi nhánh.
 
-![wan-1](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/wan-1.png)
+![wan-1](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/wan-1.png)
 
 * Hệ thống mạng của **ISP** (Internet Service Provider) cũng là một WAN. Khách hàng thuê kết nối từ ISP để sử dụng nó.
 
-![wan-2](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/wan-2.png)
+![wan-2](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/wan-2.png)
 
 * Một **VPN** cũng là một WAN nhưng được xây dụng trên những đường liên kết ảo trên Internet.
 
-![wan-3](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/wan-3.png)
+![wan-3](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/wan-3.png)
 
 <a name="phanmem"></a>
 #### 3. Phần mềm của Mạng
@@ -175,15 +175,15 @@
 	+ Mỗi dịch vụ lớp dưới được truy cập bằng một "**interface**".
 	+ Ở dưới cùng, thông tin được vận chuyển bằng cách phương tiện truyền dẫn.
 	
-	![protocol-layer](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/protocol-layer.png)
+	![protocol-layer](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/protocol-layer.png)
 
 * Ví dụ: Kiến trức "Nhà triết học - Thông dịch viên - Thư ký". Mỗi giao thức tại mỗi lớp khác nhau sẽ đáp ứng một mục đích khác nhau.
 	
-![architecture](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/architecture.png)
+![architecture](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/architecture.png)
 	
 * Mỗi lớp sẽ đóng vào gói tin một **header** riêng cho lớp đó (chứa thông tin điều khiển) để vận chuyển và sẽ gỡ bỏ header đó ở bên nhận.
 
-![header](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/header.png)
+![header](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/header.png)
 
 * Mỗi lớp cũng có thể chia tách và gộp gói tin, vv.
 
@@ -204,13 +204,13 @@
 	+ Kết nối có hướng, phải được thiết lập để sử dụng liên tục (và ngừng hoạt động sau khi sử dụng), ví dụ: gọi điện thoại.
 	+ Phi kết nối, thông tin được xử lý riêng biệt, ví dụ: phân phối bưu phẩm.
 
-![2-conn](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/2-conn.png)
+![2-conn](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/2-conn.png)
 
 ##### Ghép kênh
 * Nhiều thiết kế mạng, dựa trên nhu cầu ngắn hạn của các host, chia sẻ băng thông một cách tự động thay vì gắn cho mỗi host một phần băng thông cố định mà nó có thể được sử dụng hoặc không.
 * Thiết kế này gọi là *Ghép kênh thống kê*.
 
-![multiplexing](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/multiplexing.png)
+![multiplexing](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/multiplexing.png)
 
 ##### Switching
 * **Store & Forward Switching**: Được sử dụng trên mạng gói, các node trung gian nhận được tin đầy đủ, sau đó mới gửi chúng đi đến node kế tiếp.
@@ -222,11 +222,11 @@
 	+ Tỷ lệ gói tin đến vượt quá khả năng đầu ra.
 	+ Gói tin đợi, chờ đến lượt.
 
-![delay](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/delay.png)
+![delay](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/delay.png)
 
 ###### 4 nguồn gây trễ gói tin
 
-![4-delay](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/4-delay.png)
+![4-delay](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/4-delay.png)
 
 * **d_proc**: xử lý node.
 	+ Kiểm tra bit lỗi.
@@ -263,7 +263,7 @@
 
 * Ví dụ giả thuyết về sử dụng những phương thức sơ cấp này trong tương tác client-server:
 
-![primitives-client-server](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/primitives-client-server.png)
+![primitives-client-server](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/primitives-client-server.png)
 
 <a name="quanhegiuadichvuvagiaothuc"></a>
 ##### 3.5. Quan hệ giữa dịch vụ và giao thức
@@ -271,7 +271,7 @@
 	+ Một lớp cung cấp một dịch vụ cho lớp phía trên. [theo chiều đứng].
 	+ Một lớp giao tiếp với lớp ngang với nó bằng một giao thức [theo chiều ngang].
 	
-	![service-protocol](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/service-protocol.png)
+	![service-protocol](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/service-protocol.png)
 * *Dịch vụ* và *Giao thức* là những khái niệm khác nhau. Một dịch vụ là một tập hợp các phương thức sơ cấp (hoạt động) mà một lớp cung cấp cho lớp phía trên nó.
 * Dịch vụ xác định những hoạt động mà lớp cần chuẩn bị để thực hiện thay cho người dùng, nhưng nó không cho biết về cách những hoạt động này được thực hiện như thế nào.
 
@@ -301,13 +301,13 @@
 ##### 4.2. Mô hình tham chiếu TCP/IP
 * Mô hình 4 tầng có nguồn gốc từ thực nghiệm; bỏ qua một số tầng OSI và sử dụng IP (Internet Protocol) làm tầng Network.
 
-![tcp-ip](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/tcp-ip.png)
+![tcp-ip](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/tcp-ip.png)
 
 <a name="mohinhsudungtrongtailieunay"></a>
 ##### 4.3. Mô hình sử dụng trong tài liệu này.
 * Dựa trên mô hình TCP/IP, nhưng có thêm tầng *Physical* và xem xét *Internet protocols* kỹ hơn.
 
-![thismodel](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/thismodel.png)
+![thismodel](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/thismodel.png)
 
 <a name="nhanxetmohinhosivatcpip"></a>
 ##### 4.4. Nhận xét mô hình OSI và TCP/IP
@@ -329,11 +329,11 @@
 ##### 5.1. Internet
 * Trước Internet là **ARPANET**, một hệ thống mạng chuyển mạch phân cấp, dựa trên ý tưởng của Baran.
 
-![arpanet](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/arpanet.png)
+![arpanet](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/arpanet.png)
 
 * Internet trước đây sử dụng NSFNET(1985-1995) làm xương sống; các trường đại học kết nối để đi Internet.
 
-![nsfnet](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/nsfnet.png)
+![nsfnet](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/nsfnet.png)
 
 * Internet hiện đại thì phức tạp hơn nhiều:
 	+ Các mạng ISP được xem như xương sống của Internet.
@@ -347,42 +347,42 @@
 	
 * Kiến trúc của Internet
 
-![internet-architecture](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/internet-architecture.png)
+![internet-architecture](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/internet-architecture.png)
 
 * Mạng lưới của Nhà Cung cấp Dịch vụ Internet (ISP - Internet Service Provider) có thể trong phạm vi khu vực, quốc gia hoặc quốc tế.
 * Nếu một gói tin được định tuyến đến một host được ISP  trực tiếp phục vụ, gói tin đó sẽ đi qua vùng xương sống và đi đến host đó.
 * Còn không, nó sẽ phải được bàn giao qua những ISP khác. Các ISP kết nối với mạng lưới của họ để trao đổi lưu lượng tại các IXP (Internet eXchange Points).
 
-![isp](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/isp.png)
+![isp](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/isp.png)
 
 <a name="mangdienthoaididong3g"></a>
 ##### 5.2. Mạng điện thoại di động 3G
 * Mạng 3G được dựa trên các tế bào sóng trong không gian; mỗi tế bào cung cấp dịch vụ không dây cho các thiệt bị di động trong vùng thông qua một trạm gốc.
 
 
-![cell](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/cell.png)
+![cell](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/cell.png)
 
 * Trạm gốc kết nối với hệ thống mạng lõi để tìm kiếm các thiết bị di động khác và gửi dữ liệu về mạng điện thoại và Internet.
 
-![basestation](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/basestation.png)
+![basestation](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/basestation.png)
 
 * Khi thiết bị di động di chuyển, các trạm gốc sẽ bàn giao cho các trạm tiếp theo và mạng lưới sẽ theo dõi vị trí của họ.
 
-![move-mobiles](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/move-mobiles.png)
+![move-mobiles](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/move-mobiles.png)
 
 <a name="manglankhongday"></a>
 ##### 5.3. Mạng LAN không dây
 * Trong chuẩn 802.11, các client giao tiếp thông qua một AP (Access Point) được nối dây với phần còn lại của mạng.
 
-![access-point](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/access-point.png)
+![access-point](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/access-point.png)
 
 * Tín hiệu trong băng tần ISM 2.4Ghz khác nhau về cường độ do nhiều tác động, chẳng hạn như sự biến dạng nhiều đường đi do phản xạ - đòi hỏi phải có những thiết kế truyền phức tạp, ví dụ như OFDM.
 
-![multipath](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/multipath.png)
+![multipath](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/multipath.png)
 
 * Việc phát sóng có thể can thiệp lẫn nhau, và vùng phủ sóng có thể chồng lên nhau - CSMA (Carrier Sense Multiple Access) được sử dụng.
 
-![radio-broadcast](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/radio-broadcast.png)
+![radio-broadcast](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/radio-broadcast.png)
 
 <a name="rfidvamangcambien"></a>
 ##### 5.4. RFID và mạng cảm biến
@@ -390,12 +390,12 @@
 	+ Tags (miếng dán không sử dụng pin) được đặt trên vật thể.
 	+ Máy đọc gửi tín hiệu mà tags phản chiếu để giao tiếp.
 	
-	![rfid](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/rfid.png)
+	![rfid](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/rfid.png)
 	
 * Mạng cảm biến lan truyền các thiết bị nhỏ trên một khu vực:
 	+ Các thiết bị gửi dữ liệu về bộ thu thông qua công nghệ không dây.
 	
-	![sensor-network](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/sensor-network.png)
+	![sensor-network](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/sensor-network.png)
 
 <a name="peertopeer"></a>
 ##### 5.5. Peer to Peer
@@ -447,7 +447,7 @@
 		- Lây nhiễm bằng cách tiếp cận thụ động những đối tượng tự thực thi.
 		- Tự sao chép: Tự lan truyền đến các host, người dùng khác.
 		
-		![worm](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/worm.png)
+		![worm](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/worm.png)
 		
 * Kẻ xấu: tấn công máy chủ, hạ tầng mạng.
 	+ Tấn công từ chối dịch vụ (Denial of Service - DoS): kẻ tấn công làm cho những tài nguyên (máy chủ, băng thông) không còn khả dụng cho những lưu lượng hợp pháp bằng cách làm quá tải những nguồn tài nguyên này bằng những lưu lượng giả mạo.
@@ -456,31 +456,31 @@
 		- Đột nhập vào các host xung quanh mạng (botnet).
 		- Gửi các gói tin đến mục tiêu từ những host bị xâm nhập.
 		
-		![dos](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/dos.png)
+		![dos](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/dos.png)
 
 * Kẻ xấu có thể *chặn bắt* (sniff) được gói tin.
 	+ Chặn bắt gói tin (Packet Sniffing):
 		- Truyền Broadcast (Ethernet được chia sẻ, mạng không dây).
 		- Một số interface ngẫu nhiên đọc/ghi lại các gói tin (ví dụ, bao gồm mật khẩu) đi qua.
 		
-		![packet-sniffing](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/packet-sniffing.png)
+		![packet-sniffing](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/packet-sniffing.png)
 		
 	+ Wireshark được dùng ở những labs cuối chương là một chương trình *chặn bắt gói tin* (packet-sniffer) miễn phí.
 * Kẻ xấu có thể giả mạo địa chỉ nguồn.
 	+ IP spoofing: gửi gói tin với địa chỉ nguồn giả mạo.
 
-	![ip-spoofing](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/ip-spoofing.png)
+	![ip-spoofing](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/ip-spoofing.png)
 	
 * Kẻ xấu có thể ghi lại và tấn công (*record and playback*).
 	+ Record and playback : sniff các thông tin nhạy cảm (ví dụ như mật khẩu), và sử dụng về sau.
 	
-	![record-and-playback](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/record-and-playback.png)
+	![record-and-playback](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/record-and-playback.png)
 	
 <a name="donvimetric"></a>
 #### 8. Đơn vị Metric
 * Những prefix chính thường sử dụng:
 	
-![prefix](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/prefix.png)
+![prefix](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/prefix.png)
 
 * Sử dụng lũy thừa 10 cho tốc độ, lũy thừa 2 để lưu trữ.
 	- Ví dụ: 1Mps = 1,000,000 bps; 1KB = 1024 bytes
@@ -488,7 +488,7 @@
 
 * Internet dưới biển.
 
-![undersea](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/undersea.png)
+![undersea](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/undersea.png)
 
 ---
 

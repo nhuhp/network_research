@@ -22,7 +22,7 @@
 * Biết được cách các giao thức và các phân lớp được thể hiện trong gói tin. Đó là những khái niệm chính về cấu trúc mạng được trình bày trong tài liệu.
 * Bài lab ở đây:
 
-http://scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/trace-protocol-layers.pcap
+<http://scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/trace-protocol-layers.pcap>
 
 <a name="yeucau"></a>
 ### 2. Yêu cầu
@@ -37,7 +37,7 @@ http://scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/trace-protocol-layers.p
 * Công cụ cơ bản để quan sát các thông điệp trao đổi giữa các thực thể thực hiện các giao thức gọi là *packet sniffer*. Giống như tên gọi, một packet sniffer chặn bắt ("sniff") thông điệp được gửi/nhận từ/bởi máy tính của bạn; nó cũng sẽ lưu trữ và/hoặc hiển thị nội dung của nhiều trường giao thức trong những gói tin bị bắt. Một packet sniffer thường thụ động. Nó quan sát được những thông tin được gửi và nhận bởi những ứng dụng và giao thức chạy trên máy tính, nhưng không bao giờ gửi gói tin đi. Tương tự, các gói tin nhận được trên packet sniffer không bao giờ được đánh địa chỉ rõ ràng. Thay vào đó, packet sniffer sẽ nhận được một bản sao của gói tin được gửi/nhận từ/bởi ứng dụng và các giao thức chạy trên máy tính.
 * Hình ở dưới thể hiện cấu trúc của một packet sniffer. Bên phải hình là những giao thức (ở đây là Internet Protocol) và các ứng dụng (như là web browser hay ftp client) thường chạy trên máy tính. Packet sniffer, được hiển thị bên trong hình chữ nhật trong hình là phần mở rộng của một phần mềm bình thường trên máy tính và bao gồm hai phần. Thư viện bắt gói tin nhận được một bản sao của mỗi frame link-layer được gửi từ hoặc nhận bỏi máy tính của bạn. Thông tin trao đổi giao các giao thức ở tầng cao hơn như là HTTP, FTP, TCP, UDP, hoặc IP, tất cả cuối cùng được đóng gói trong các frame link-layer, được vận chuyển qua các vật liệu vật lý như là cáp Ethernet.
 
-![packet-sniffer-structure](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/packet-sniffer-structure.png)
+![packet-sniffer-structure](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/packet-sniffer-structure.png)
 
 
 
