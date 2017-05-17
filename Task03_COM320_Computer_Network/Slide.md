@@ -436,12 +436,58 @@
 	+ Phần mềm gián điệp, phần mềm độc hại có thể ghi lại thao tác bàn phím, các trang web đã truy cập,...
 	+ Những host bị lây nhiễm có thể bị đưa vào mạng botnet, được sử dụng để *spam* hay *tấn công DDoS*.
 	+ Phần mềm độc hại thường có khả năng tự sao chép: từ một host lây nhiễm, xâm nhập vào các máy khác.
-	
-	
+	+ Trojan horse:
+		- Ẩn trong một số phần mềm có ích.
+		- Ngày nay, thường có trong trang Web (Active-X, plugin).
+	+ Virus:
+		- Lây nhiễm bằng cách tiếp cận đối tượng (ví dụ như email đính kèm), chủ động thực thi.
+		- Tự sao chép: Tự lan truyền đến các host, người dùng khác.
+	+ Worm: 
+		- Lây nhiễm bằng cách tiếp cận thụ động những đối tượng tự thực thi.
+		- Tự sao chép: Tự lan truyền đến các host, người dùng khác.
+		
+		![worm](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/worm.png)
+		
+* Kẻ xấu: tấn công máy chủ, hạ tầng mạng.
+	+ Tấn công từ chối dịch vụ (Denial of Service - DoS): kẻ tấn công làm cho những tài nguyên (máy chủ, băng thông) không còn khả dụng cho những lưu lượng hợp pháp bằng cách làm quá tải những nguồn tài nguyên này bằng những lưu lượng giả mạo.
+	+ Các bước thực hiện:
+		- Chọn mục tiêu.
+		- Đột nhập vào các host xung quanh mạng (botnet).
+		- Gửi các gói tin đến mục tiêu từ những host bị xâm nhập.
+		
+		![dos](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/dos.png)
 
+* Kẻ xấu có thể *chặn bắt* (sniff) được gói tin.
+	+ Chặn bắt gói tin (Packet Sniffing):
+		- Truyền Broadcast (Ethernet được chia sẻ, mạng không dây).
+		- Một số interface ngẫu nhiên đọc/ghi lại các gói tin (ví dụ, bao gồm mật khẩu) đi qua.
+		
+		![packet-sniffing](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/packet-sniffing.png)
+		
+	+ Wireshark được dùng ở những labs cuối chương là một chương trình *chặn bắt gói tin* (packet-sniffer) miễn phí.
+* Kẻ xấu có thể giả mạo địa chỉ nguồn.
+	+ IP spoofing: gửi gói tin với địa chỉ nguồn giả mạo.
+
+	![ip-spoofing](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/ip-spoofing.png)
+	
+* Kẻ xấu có thể ghi lại và tấn công (*record and playback*).
+	+ Record and playback : sniff các thông tin nhạy cảm (ví dụ như mật khẩu), và sử dụng về sau.
+	
+	![record-and-playback](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/record-and-playback.png)
+	
 <a name="donvimetric"></a>
 #### 8. Đơn vị Metric
-* 
+* Những prefix chính thường sử dụng:
+	
+![prefix](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/prefix.png)
+
+* Sử dụng lũy thừa 10 cho tốc độ, lũy thừa 2 để lưu trữ.
+	- Ví dụ: 1Mps = 1,000,000 bps; 1KB = 1024 bytes
+* "B" dùng cho bytes, "b" dùng cho bits.
+
+* Internet dưới biển.
+
+![undersea](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/img/undersea.png)
 
 ---
 
