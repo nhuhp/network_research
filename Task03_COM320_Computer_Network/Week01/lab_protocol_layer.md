@@ -83,7 +83,10 @@ Trở lại với phần lưu lượng đã được bắt ở trước. Chúng 
 ![capture-option](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/capture-option.png)
 
 10. Khi quá trính bắt đã được khởi động, vào một trang sử dụng *http* (không dùng https). Lúc này, các gói tin sẽ được Wireshark ghi lại là nội dung được chuyển. Thử lại <http://www.ulster.ac.uk> trên trình duyệt của bạn.
-11. Sau khi tải về thành công, trở lại Wireshark và dùng menu hoặc các phím để dừng. Nếu bạn thành công, cửa sổ Wireshark sẽ hiển thị nhiều gói tin, và hầu hết là nó sẽ đầy đủ. Số lượng gói tin đã bắt được sẽ phụ thuộc vào kích thước của trang web, nhưng ít nhất là có 8 gói tin được bắt, thông thường là từ 20-100, và nhiều gói tin có màu xanh lá. Tôi đề nghị bạn dừng ghi bằng cách nhấn 
+11. Sau khi tải về thành công, trở lại Wireshark và dùng menu hoặc các phím để dừng. Nếu bạn thành công, cửa sổ Wireshark sẽ hiển thị nhiều gói tin, và hầu hết là nó sẽ đầy đủ. Số lượng gói tin đã bắt được sẽ phụ thuộc vào kích thước của trang web, nhưng ít nhất là có 8 gói tin được bắt, thông thường là từ 20-100, và nhiều gói tin có màu xanh lá. Tôi đề nghị bạn dừng ghi bằng cách nhấn Stop màu Đỏ trên giao diện vì nó sẽ dễ dàng hơn để tìm kiếm "200 gói tin OK". Một ví dụ được hiển thị bên dưới.
+
+![capture-port-80](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/capture-port-80.png)
+
 ### Tài liệu tham khảo:
 
 ---
