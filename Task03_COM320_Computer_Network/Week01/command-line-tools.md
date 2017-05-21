@@ -70,7 +70,7 @@
 2. Gõ `nslookup www.ulster.ac.uk`.
 3. Bạn sẽ thấy: 
 
-![nslookup]()
+![nslookup](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/nslookup.png)
 
 4. Lưu ý rằng lệnh này sẽ cung cấp cho bạn tên thật của server, theo quy ước đặt tên của mỗi công ty hosting; địa chỉ IP; và bất kỳ alias nào hoạt động dưới server đó.
 
