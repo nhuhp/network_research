@@ -102,7 +102,7 @@ Net Sessions là một công cụ dùng để quản lý kết nối máy tính 
 
 ### Tài liệu tham khảo:
 
-
+[1] Command Line Tools. http://scisweb.ulster.ac.uk/~kevin/com320/labs/ping&more.html
 
 ---
 
