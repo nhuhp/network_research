@@ -117,7 +117,7 @@ Trở lại với phần lưu lượng đã được bắt ở trước. Chúng 
 
 4. Tất cả code của trang chủ Ulster sẽ được sao chép lại.
 
-5. Mở một trình soạn thảo văn bản như là Notepad++ và dán đoạn code HTML vào một file mới. Lưu thành "UlsterHomePage.html". Tiếp theo, mở Explorer, di chuyển đến nơi lưu file, nhấn vào và mở bằng trình duyệt mặc định.
+5. Mở một trình soạn thảo văn bản như là Notepad++ và dán đoạn code HTML vào một file mới. Lưu thành "**UlsterHomePage.html**". Tiếp theo, mở Explorer, di chuyển đến nơi lưu file, nhấn vào và mở bằng trình duyệt mặc định.
 
 6. Lưu ý rằng phần lớn trang chủ Ulster đã thực sự được gửi đến máy tính của bạn.
 
@@ -152,7 +152,7 @@ Trả lời: Khóa ghép kênh cho IP là trường Protocol. Nó có giá trị
 [1] http://scisweb.ulster.ac.uk/~kevin/com320/labs.htm
 
 [2] Lab Protocol Layers. http://scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/lab-protocol-layers.pdf
----
 
+---
 
 ### Hết
