@@ -4,7 +4,7 @@
 > 
 > Thực hiện: **Phạm Hoàng Nhu**
 > 
-> Cập nhật lần cuối: **21/05/2017**
+> Cập nhật lần cuối: **22/05/2017**
 
 ### Mục lục
 
@@ -144,7 +144,7 @@ Net Sessions là một công cụ dùng để quản lý kết nối máy tính 
 
 ![pathping-2](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week01/img/pathping-2.png)
 
-Chú ý đến hai cột bên phải ngoài cùng - Node/Link Lost/Sent = Pct và Address - chứa những thông tin hữu ích nhất. Tìm những kết nối có độ giảm phần trăm các gói tin. Tỷ lệ hao hụt thể hiện kết nối (được đánh dấu là `|` ở cột bên phải ngoài cùng) biểu thị hao hụt gói tin được forward trên đường đi. Hao hụt này cho thấy sự tắc nghẽn kết nối. Tỷ lệ hao hụt hiển thị cho router (biểu thị bởi địa chỉ IP của chúng trong cột bên phải ngoài cùng) cho thấy CPU của những router này có thể bị quá tải. Những router bị tắc nghẽn cũng có thể là một tác nhân trong những vấn đề đầu cuối, đặc biệt là những gói tin được forward bằng những router phần mềm.
+Chú ý đến hai cột bên phải ngoài cùng - This Node/Link Lost/Sent = Pct và Address - chứa những thông tin hữu ích nhất. Tìm những kết nối có độ giảm phần trăm các gói tin. Tỷ lệ hao hụt thể hiện kết nối (được đánh dấu là `|` ở cột bên phải ngoài cùng) biểu thị hao hụt gói tin được forward trên đường đi. Hao hụt này cho thấy sự tắc nghẽn kết nối. Tỷ lệ hao hụt hiển thị cho router (biểu thị bởi địa chỉ IP của chúng trong cột bên phải ngoài cùng) cho thấy CPU của những router này có thể bị quá tải. Những router bị tắc nghẽn cũng có thể là một tác nhân trong những vấn đề đầu cuối, đặc biệt là những gói tin được forward bằng những router phần mềm.
 
 ### Tài liệu tham khảo:
 
