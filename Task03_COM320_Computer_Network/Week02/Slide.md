@@ -52,9 +52,9 @@
 
 <a name="tocdodulieucucdaicuamotkenh"></a>
 ##### 1.2. Tốc độ dữ liệu cực đại của một Kênh
-* Định lý Niquist liên hệ tốc độ dữ liệu với băng thông (B) và số mức tín hiệu (V):
+* Định lý Nyquist liên hệ tốc độ dữ liệu với băng thông (B) và số mức tín hiệu (V):
 
-![niquist](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/niquist.png)	
+![nyquist](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/nyquist.png)	
 
 * Định lý Shanon liên hệ tốc độ dữ liệu với băng thông (B), cường độ tín hiệu (S) so với độ nhiễu (N):
 
