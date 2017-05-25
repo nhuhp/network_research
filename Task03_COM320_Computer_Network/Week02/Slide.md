@@ -77,7 +77,7 @@
 ![utp](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/utp.png)
 
 <a name="thuatnguketnoi"></a>
-######2.1.2. Thuật ngữ kết nối
+###### 2.1.2. Thuật ngữ kết nối
 
 * Kết nối **Full-duplex**
 	- Được sử dụng trong truyền dẫn cả hai hướng cùng một lúc.
