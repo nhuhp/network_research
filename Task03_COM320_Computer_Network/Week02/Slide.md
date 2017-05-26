@@ -210,7 +210,7 @@
 	- Hồng ngoại/Ánh sáng: đường ngắm.
 	- Vi sóng (Microwave): LAN và 3G/4G.
 
-![electomagnetic-spectrum](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/electomagnetic-spectrum.png)
+![electromagnetic-spectrum](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/electromagnetic-spectrum.png)
 
 * Để quản lý giao thoa, phổ được phân chia cẩn thận, và việc sử dụng nó được quản lý và cấp phép, ví dụ, được bán đấu giá.
 
@@ -222,7 +222,7 @@
 
 ![ism-band](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/ism-band.png)
 
-<a name"truyendanvotuyen"></a>
+<a name="truyendanvotuyen"></a>
 ##### 3.2. Truyền dẫn vô tuyến
 * Tín hiệu vô tuyến xuyên qua các tòa nhà tốt và lan truyền trong khoảng cách dài với sự hao hụt trên đường dẫn.
 * Trong các dải tần VLF, LF và MF, sóng vô tuyến truyền theo độ cong của Trái Đất.
@@ -239,7 +239,7 @@
 
 ![reflected-path](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/reflected-path.png)
 
-<a name"truyendanvisong"></a>
+<a name="truyendanvisong"></a>
 ##### 3.3. Truyền dẫn vi sóng
 * Vi sóng có nhiều băng thông và được sử dụng rộng rãi trong nhà (WiFi) và ngoài trời (3G, vệ tinh).
 	- Tín hiệu bị suy giảm/phản xạ bởi các vật thể hàng ngày.
@@ -247,7 +247,7 @@
 	
 ![microwave-transmission](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/microwave-transmission.png)
 
-<a name"truyendananhsang"></a>
+<a name="truyendananhsang"></a>
 ##### 3.4. Truyền dẫn ánh sáng
 * Ánh sáng nhìn thấy (không dùng sợi quang) có thể được sử dụng cho kết nối.
 	- Ánh sáng có tính định hướng cao, cao nhiều băng thông.
@@ -255,7 +255,7 @@
 
 ![light-transmission](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/light-transmission.png)
 	
-<a name"khongdayvscoday"></a>
+<a name="khongdayvscoday"></a>
 ##### 3.5. Không dây vs Có dây/Cáp Quang
 * Không dây:
 	- Ưu:
@@ -272,7 +272,7 @@
 		+ Có thể đắt để triển khai, đặc biệt là qua những khoảng cách xa.
 		+ Không sẵn sàng hỗ trợ khả năng di động hay phát sóng.
 
-<a name"vetinhlienlac"></a>
+<a name="vetinhlienlac"></a>
 #### 4. Vệ tinh liên lạc
 * Vệ tinh có hiệu quả trong phân phối phát sóng và liên lạc mọi lúc/mọi nơi.
 
@@ -294,7 +294,7 @@
 |Ku|11 GHz|14 GHz|500 MHz|Mưa|
 |Ka|20 GHz|30 GHz|3500 MHz|Mưa;Giá thành thiết bị|
 
-<a name"cacloaivetinh"></a>
+<a name="cacloaivetinh"></a>
 ##### 4.1. Các loại vệ tinh
 * Vệ tinh và các thuộc tính của chúng thay đổi theo độ cao:
 	- Địa tĩnh - Geostationary (GEO).
@@ -303,7 +303,7 @@
 
 ![kinds-of-satellites](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/kinds-of-satellites.png)
 
-<a name"vetinhdiatinh"></a>	
+<a name="vetinhdiatinh"></a>	
 ##### 4.2. Vệ tinh Địa tĩnh (GEO)
 - [4.3. Vệ tinh quỹ đạo thấp](#vetinhquydaothap)
 - [4.4. Vệ tinh và cáp quang](#vetinhvacapquang)
