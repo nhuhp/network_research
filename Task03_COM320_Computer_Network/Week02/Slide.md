@@ -4,7 +4,7 @@
 > 
 > Thực hiện: **Phạm Hoàng Nhu**
 > 
-> Cập nhật lần cuối: **26/05/2017**
+> Cập nhật lần cuối: **27/05/2017**
 
 ### Mục lục
 
@@ -33,9 +33,19 @@
 - [4.3. Vệ tinh quỹ đạo thấp](#vetinhquydaothap)
 - [4.4. Vệ tinh và cáp quang](#vetinhvacapquang)
 
-[5. Điều chế số và Ghép kênh]
+[5. Điều chế số và Ghép kênh](#dieuchesovaghepkenh)
+- [5.1. Truyền dẫn Baseband](#truyendanbaseband)
+- [5.2. Truyền dẫn Passband](#truyendanpassband)
+- [5.3. Ghép kênh phân chia theo tần số](#fdm)
+- [5.4. Ghép kênh phân chia theo thời gian](#tdm)
+- [5.5. Đa truy nhập phân chia theo mã số](#cdma)
 
-[6. Mạng điện thoại chuyển mạch công cộng]
+[6. Mạng điện thoại chuyển mạch công cộng](#mangdienthoaichuyenmachcongcong)
+- [6.1. Cấu trúc của hệ thống mạng điện thoại](#cautruccuahethongmangdienthoai)
+- [6.2. Các chính sách mạng điện thoại](#cacchinhsachmangdienthoai)
+- [6.3. Đường dây thuê bao: modems, ADSL và FTTH](#duongdaythuebao)
+- [6.4. Trunks và Ghép kênh](#trunksvaghepkenh)
+- [6.5. Chuyển mạch](#chuyenmach)
 
 [7. Hệ thống điện thoại di động]
 
@@ -305,12 +315,203 @@
 
 <a name="vetinhdiatinh"></a>	
 ##### 4.2. Vệ tinh Địa tĩnh (GEO)
-- [4.3. Vệ tinh quỹ đạo thấp](#vetinhquydaothap)
-- [4.4. Vệ tinh và cáp quang](#vetinhvacapquang)
+* Vệ tinh GEO có quỹ đạo trên 35000 km trên một vị trí cố định.
+	- VSAT (máy tính) có thể giao tiếp với nhau nhờ sụ trợ giúp của một hub.
+	- Những dải tần khác nhau (L,S,C,Ku,Ka) trên GHz được sử dụng nhưng có thể bị nghẽn hay có thể ảnh hưởng bởi mưa.
+	
+	![geo](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/geo.png)
+	
+##### Sat Nav
+* Hệ thống Sat Nav sử dụng một loạt các vệ tinh được đặt trên một quỹ đạo cụ thể xung quanh Trái Đất để tìm ra vị trí của Receiver. Các vệ tinh truyền tải thông tin về quỹ đạo và thời gian. Các Receiver sử dụng thông tin này từ một số vệ tinh để tính toán vị trí của nó. Những hệ thống thương mại có thể chính xác đến từng mét. Nhưng những hệ thống cao cấp có thể chính đến từng centimet.
+* Một hệ thống vệ tinh định vị có được biết với tên **sat nav system** là một hệ thống vệ tinh, thường được quản lý bởi một công ty hoặc một quốc gia, cung cấp vị trí không gian địa lý, là một một thuật ngữ kỹ thuật cho một vị trí cụ thể trên hoặc ở trên Trái đất trong không gian 3 chiều.
 
+![sat-nav](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/sat-nav.png)
 
+<a name="vetinhquydaothap"></a>
+##### 4.3. Vệ tinh quỹ đạo thấp
+* Hệ thống như **Iridium** sử dụng nhiều vệ tinh có độ trễ để phủ sóng và định tuyến liên lạc thông qua chúng.
 
+![low-earth-orbit](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/low-earth-orbit.png)
+
+##### Globalstar
+
+![globalstar](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/globalstar.png)
+
+* Trong đó:
+	- (a) Chuyển tiếp trong không gian.
+	- (b) Chuyển tiếp trên mặt đất.
+	
+<a name="vetinhvacapquang"></a>
+##### 4.4. Vệ tinh và cáp quang
+||**Vệ tinh**|**Cáp quang**|
+|---|---|---|
+|Ưu điểm|Có thể thiết lập giao tiếp rất nhanh ở mọi lúc/mọi nơi(sau khi vệ tinh đã được vận hành); Có thể phát sóng trên khu vực rộng|Lượng băng thông khổng lồ trên khoảng cách dài|
+|Hạn chế|Băng thông bị giới hạn và cần quản lý giao thoa|Lắp đặt có thể đắt/khó|
+
+<a name="dieuchesovaghepkenh"></a>
+#### 5. Điều chế số và Ghép kênh
+* Các mạch điều chế (Modulation) dùng để gửi các bit dưới dạng tín hiệu.
+* Ghép kênh (Multiplexing) dùng để chia sẻ một kênh cho nhiều người sủ dụng.
+
+<a name="truyendanbaseband"></a>
+##### 5.1. Truyền dẫn Baseband
+* Các mã đường truyền gửi các kí hiệu đại diện cho 1 hay nhiều bit.
+	- NRZ là loại mã đường truyền đơn giản nhất (+1V="1" , -1V="0").
+	- Những loại mã khác thì cắt giảm băng thông và chuyển đổi tín hiệu.
+
+![line-codes](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/line-codes.png)
+
+* Phục hồi xung nhịp đồng hồ.
+	- Để giải mã các kí hiệu, tín hiệu cần chuyển đổi một cách đầy đủ.
+		+ Nếu không, các dòng bit dài 0s (hoặc 1s) sẽ gây nhầm lẫn, ví du:
 		
+		![confusing-codes](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/confusing-codes.png)
+		
+	- Chiến lược:
+		+ Mã Manchester, trộn tín hiệu đồng hồ trong mỗi kí hiệu.
+		+ 4B/5B ánh xạ 4 bit dữ liệu với 5 bit mã với 1s và 0s:
+		
+		![4b-5b](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/4b-5b.png)
+		
+		+ Scrambler XOR dữ liệu tx/rx với các bit giả ngẫu nhiên.
+		
+<a name="truyendanpassband"></a>
+##### 5.2. Truyền dẫn Passband
+* Điều chế biên độ, tần số/pha của một sóng mang để gửi các bit trong một phạm vị tần số. 
+
+![passband](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/passband.png)
+
+* Điều chế số được thực hiện với truyền dẫn Passband bằng cách điều chỉnh hoặc điều chế một tín hiệu sóng mang nằm trong dải Passband. Chúng ta có thể điều chỉnh tín hiệu sóng mang.
+* Một cách để sử dụng băng thông hiệu quả hơn là sử dụng 4 múc độ chuyển đổi để chuyển đổi 2 bit thông tin cho mỗi kí hiệu. Phiên bản này gọi là QPSK (Quadrature Phase Shift Keying).
+
+<a name="fdm"></a>
+##### 5.3. Ghép kênh phân chia theo tần số
+* Ghép kênh phân chia theo tần số hay FDM (Frequency Division Multiplexing) chia sẻ kênh bằng cách đặt người sử dụng trên những tần số khác nhau:
+
+![fdm](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/fdm.png)
+
+* OFDM (Orthogonal FDM) là một kỹ thuật FDM hiệu quả được sử dụng trong 802.11, mạng di động 4G và các giao tiếp khác.
+	- Các sóng mang phụ (Subcarrier) được kết hợp để đóng gói chặt chẽ.
+	
+	![ofdm-1](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/ofdm-1.png)
+
+* Khi gửi dữ liệu số, có thể chia phổ một cách hiệu quả mà không cần sử dụng các dải tần bảo vệ. Trong OFDM, băng thông kênh được chia thành nhiều sóng mang phụ gửi dữ liệu một cách độc lập.
+* Một ví dụ quen thuộc là các phiên bản **a**,**g** và **n** của WiFi 802.11; WiMax;DVB-T, hệ thống phát sóng truyền hình số trên mặt đất được sử dụng ở hầu hết trên thế giới bên ngoài Bắc Mỹ; DMT (Discrete Multi Tone), dạng chuẩn ADSL.
+* Tần số của sóng mang phụ được chọn sao cho các sóng mang phụ trực giao với giao, có nghĩa là các nhiễu chéo (crosstalk) giữa các kênh phụ được loại bỏ và dải tần bảo vệ liên sóng mang không cần bắt buộc.
+* Điều này làm đơn giản hóa việc thiết kế cả máy phát và máy thu. Không giống như trong FDM truyền thống, không cần một bộ lọc riêng cho mỗi kênh con.
+
+![ofdm-2](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/ofdm-2.png)
+
+<a name="tdm"></a>
+##### 5.4. Ghép kênh phân chia theo thời gian
+* Carrier T1 (1.544 Mbps).
+
+![t1-carrier](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/t1-carrier.png)
+
+* Điều chế Delta.
+
+![delta-modulation](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/delta-modulation.png)
+
+* Ghép kênh các luồng T1 thành những sóng mang cao hơn.
+
+![t1-streams](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/t1-streams.png)
+
+* Ghép kênh phân chia theo thời gian hay TDM (Time Division Multiplexing) chia sẻ một kênh qua thời gian:
+	- Người sủ dụng thay phiên trên một lịch cố định; đây không phải là chuyển mạch gói hay STDM (Statistical TDM).
+	- Được sử dụng rộng rãi trong hệ thống điện thoại/di động.
+	
+![tdm](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/tdm.png)
+
+<a name="cdma"></a>	
+##### 5.5. Đa truy nhập phân chia theo mã số
+* Đa truy nhập phân chia theo mã số hay CDMA (Code Division Multiple Access) chia sẻ kênh bằng cách cung cấp người dùng một mã.
+	- Các mã thì trực giao; Có thể được gửi cùng một lúc.
+	- Được sử dụng rộng rãi như một phần của mạng 3G.
+
+![cdma](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/cdma.png)
+
+<a name="mangdienthoaichuyenmachcongcong"></a>	
+#### 6. Mạng điện thoại chuyển mạch công cộng
+
+<a name="cautruccuahethongmangdienthoai"></a>	
+##### 6.1. Cấu trúc của hệ thống mạng điện thoại
+
+![structure-of-telephone-system](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/structure-of-telephone-system.png)
+
+	- (a) Hệ thống mạng liên kết đầy đủ.
+	- (b) Chuyển mạch trung tâm.
+	- (c) Hệ thống 2 cấp.
+
+* Một hệ thống phân cấp vận chuyển điện thoại được tạo thành từ:
+	- Các đường dây thuê bao, hầu hết là cáp xoắn đôi tín hiệu tương tự đến các căn hộ.
+	- Các đường Trunk, cáp quang số có thể vận chuyển cuộc gọi.
+	- Các văn phòng chuyển mạch có thể di chuyển cuộc gọi giữa các đường trunk.
+	
+	![hierarchical-system](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/hierarchical-system.png)
+
+<a name="cacchinhsachmangdienthoai"></a>		
+##### 6.2. Các chính sách mạng điện thoại
+* Các thành phần chính của Hệ thống mạng điện thoại.
+	- Các đường dây thuê bao: Các đường cáp xoắn đôi tín hiệu tương tự đến các căn hộ và doanh nghiệp.
+	- Các đường Trunk: Các đường Cáp quang số kết nối với các văn phòng chuyển mạch.
+	- Các văn phòng chuyển mạch: Nơi các cuộc gọi được di chuyển từ một đường trunk đến đường trunk khác. 
+* Modems
+
+![modems](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/modems.png)
+
+	- (a) Một tín hiệu nhị phân.
+	- (b) Điều chế tần số.
+	- (c) Điều chế biên độ.
+	- (d) Điều chế pha.
+* DSL (Digital Subscriber Lines)
+	- Băng thông so với Khoảng cách qua Cáp UTP loại 3 cho DSL.
+
+	![bandwidth-distance](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/bandwidth-distance.png)
+
+	- Hoạt động của ADSL sử dụng điều chế đa tần rời rạc.
+	
+	![adsl](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/adsl.png)
+	
+	- Một cấu hình thiết bị ADSL điển hình.
+	
+	![adsl-equipment](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/adsl-equipment.png)
+
+* Đường thuê bao không dây.
+	- Kiến trúc của một hệ thống LMDS.
+	
+	![lmds](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/lmds.png)
+	
+<a name="duongdaythuebao"></a>
+##### 6.3. Đường dây thuê bao: modems, ADSL và FTTH
+* Modems
+	- Các modems điện thoại gửi dữ liệu số qua một giao kênh thoại tương tự 3.3 KHz đến POTS.
+	- Tốc độ < 56 kbps; một cách để kết nối đi Internet.
+	
+	![modems-local-loop](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/modems-local-loop.png)
+	
+* DSL
+	- DSL băng thông rộng gửi dữ liệu qua đường dây thuê bao đến văn phòng địa phương bằng những tần số mà không được POTS sử dụng.
+	- Điện thoại/Máy tính cắm vào cùng một đường dây điện thoại.
+	- Tốc độ thay đổi tùy theo đường dây.
+		+ ADSL2 lên đến 12 Mbps.
+	- OFDM được sử dụng lên đến 1.1 MHz cho ADSL2.
+		+ Hầu hết băng thông down.
+
+		![dsl-local-loop](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/dsl-local-loop.png)
+
+* FTTH
+	- FTTH băng thông rộng dựa vào việc triển khai cáp quang để cung cấp tốc độ dữ liệu cao cho khách hàng.
+		+ 1 bước sóng có thể được chia sẻ cho nhiều căn hộ.
+		+ Cáp quang thì bị động (không có độ khuếch đại,vv).
+		
+		![ftth-local-loop](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/ftth-local-loop.png)
+		
+<a name="trunksvaghepkenh"></a>
+##### 6.4. Trunks và Ghép kênh
+
+<a name="chuyenmach"></a>
+##### 6.5. Chuyển mạch
+
 ### Tài liệu tham khảo:
 
 [1] http://scisweb.ulster.ac.uk/~kevin/com320/notes.htm
