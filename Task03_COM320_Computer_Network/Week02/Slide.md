@@ -4,7 +4,7 @@
 > 
 > Thực hiện: **Phạm Hoàng Nhu**
 > 
-> Cập nhật lần cuối: **27/05/2017**
+> Cập nhật lần cuối: **28/05/2017**
 
 ### Mục lục
 
@@ -47,12 +47,18 @@
 - [6.4. Trunks và Ghép kênh](#trunksvaghepkenh)
 - [6.5. Chuyển mạch](#chuyenmach)
 
-[7. Hệ thống điện thoại di động]
+[7. Hệ thống điện thoại di động](#hethongdienthoaididong)
+- [7.1. Các thế hệ của hệ thống điện thoại di động](#cacthehecuahethongdienthoaididong)
+- [7.2. Hệ thống mạng điện thoại di động Cellular](#cellular)
+- [7.3. GSM, một hệ thống 2G](#gsm)
+- [7.4. UMTS, một hệ thống 3G](#umts)
 
-[8. Truyền hình cáp]
+[8. Truyền hình cáp](#truyenhinhcap)
+- [8.1. Internet qua cáp](#internetquacap)
+- [8.2. Modem Cáp](#modemcap)
+- [8.3. Cáp vs ADSL](#capvsadsl)
 
 ---
-
 
 <a name="cosolythuyettruyenthongdulieu"></a>
 #### 1. Cơ sở lý thuyết về truyền thông dữ liệu
@@ -508,10 +514,160 @@
 		
 <a name="trunksvaghepkenh"></a>
 ##### 6.4. Trunks và Ghép kênh
-
+* Các cuộc gọi được thực hiện kỹ thuật số trên các đường trunk PSTN sử dụng TDM.
+	- Một cuộc gọi là một mẫu PCM 8 bit mỗi 125 μs (64kbps).
+	- T1 Carrier truyền thống có 24 kênh gọi mỗi 125 μs (1.544 Mbps) với các ký hiệu dựa trên AMI.
+	
+	![trunk-multiplexing](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/trunk-multiplexing.png)
+	
+* SONET (Synchronous Optical NETwork) là tiêu chuẩn toàn cầu về mang các tín hiệu số trên đường trunk quang học.
+	- Giữ frame 125 μs, frame cơ sở là 810 byte (52 Mbps).
+	- Payload "float" trong frame có tính linh hoạt.
+	
+	![sonet](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/sonet.png)
+	
+* Phân cấp 3:1 mỗi cấp được sử dụng để có tốc độ cao hơn.
+	- Mỗi cấp cũng thêm một số lượng nhỏ frame.
+	- Tốc độ từ 50 Mbps (STS-1) tới 40 Gbps (STS-768)
+	
+	![3-1](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/3-1.png)
+	
+* WDM (Ghép kênh phân chia theo bước sóng), một tên gọi khác của FDM, được sử dụng để mang nhiều tín hiệu trên một sợi quang:
+	
+	![wdm](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/wdm.png)
+		
 <a name="chuyenmach"></a>
 ##### 6.5. Chuyển mạch
+* PSTN sử dụng chuyển mạch kênh; Internet sử dụng chuyển mạch gói.
 
+![pstn-internet](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/pstn-internet.png)
+
+* Chuyển mạch kênh yêu cầu thiết lập cuộc gọi (kết nối) trước khi dữ liệu di chuyển.
+	- Cũng có ngưng kết nối khi kết thúc (không hiển thị).
+* Chuyển mạch gói xử lý các message một cách độc lập.
+- Không có thiết lập, nhưng các hàng đợi ở Router.	
+
+	![circuit-packet-switching](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/circuit-packet-switching.png)
+	
+* So sánh mạng dùng dùng chuyển mạch kênh và chuyển mạch gói.
+
+||**Chuyển mạch kênh**|**Chuyển mạch gói**|	
+|---|---|---|
+|Thiết lập cuộc gọi|Yêu cầu|Không cần|
+|Đường đi vật lý riêng|Có|Không|
+|Mỗi gói tin đi theo cùng một đường|Có|Không|
+|Gói tin đến đúng thứ tự|Có|Không|
+|Switch có lỗi crash fatal|Có|Không|
+|Băng thông có sẵn|Cố định|Tự động|
+|Thời gian tắc nghẽn có thể|Tại thời điểm thiết lập|Trên mỗi gói tin|
+|Băng thông có thể bị lãng phí|Có|Không|
+|Truyền tải **Store-and-forward**|Không|Có|
+|Nạp tải|Mỗi phút|Một gói tin|
+
+<a name="hethongdienthoaididong"></a>
+#### 7. Hệ thống điện thoại di động
+* Khởi đầu của Điện thoại Di động.
+	- Nó là kích thước của một cái nắp thùng rác và có phạm vi nửa dặm.
+	- Nhà phát minh **Nathan Stubblefield** được công nhận là cha đẻ của điện thoại di động 100 năm sau khi ông được cấp bằng sáng chế thiết kế của mình một cái "điện thoại không dây".
+	- Người nông dân trồng dưa đưa ra sáng chế của mình vào năm 1902 sau khi dành tất cả các giờ rảnh rỗi và tiền của mình để thành lập một dịch vụ điện thoại tại thị trấn Murray, Kentucky.
+	- Ông xây dựng một cái cột 200 ft trong vườn của mình, truyền âm thanh từ điện thoại này sang điện thoại khác bằng từ trường.
+	- Người thợ điện tự học đã giới thiệu thiết bị của mình vào năm 1902.
+	- Năm 1908 ông được cấp bằng sáng chế phiên bản mới để liên lạc với những chiếc xe di chuyển.
+	- Điện thoại của ông không thành công về mặt thương mại trong suốt cuộc đời của ông. Stubblefield có vẻ chỉ muốn giúp cộng đồng địa phương bằng cách kết nối nhà với điện thoại.
+	- Ông luôn bị ám ảnh và không bao giờ cho phép gia đình rời khỏi trang trại mà không có ông, và không để khách chạm vào tài sản của mình vì ông sợ rằng họ có thể ăn cắp các phát minh của mình.
+	- Ông có 6 đứa con - sống trong cảnh nghèo đói tồi tệ, với bất kỳ đồng tiền dành dụm vào những thí nghiệm điện của ông. Cuối cùng vợ ông cũng bỏ ông. Stubblefield sống thập niên cuối cùng của cuộc đời mình làm tu sĩ lưu động. Ống mất vào năm 1928 và được chôn trong một ngôi mộ không đánh dấu.
+	
+	![stubblefield](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/stubblefield.png)
+		
+<a name="cacthehecuahethongdienthoaididong"></a>
+##### 7.1. Các thế hệ của hệ thống điện thoại di động
+* 1G, thoại tương tự.
+	- AMPS (Advanced Mobile Phone System) là một ví dụ, được triển khai từ những năm 1980. Điều chế dựa trên FM (như trong radio).
+* 2G, thoại tương tự và dữ liệu số.
+	- GSM (Global System for Mobile) là một ví dụ, được triển khai từ những năm 1990. Điều chế dựa trên QPSK.
+* 3G, thoại và dữ liệu số.
+	- UMTS (Universal Mobile Telecomunications System) là một ví dụ, được triển khai những năm 2000. Điều chế dựa trên CDMA.
+* 4G, dữ liệu số bao gồm thoại.
+	- LTE (Long Term Evolution) là một ví dụ, được triển khai từ năm 2010. Điều chế dựa trên OFDM.
+
+<a name="cellular"></a>	
+##### 7.2. Hệ thống mạng điện thoại di động Cellular
+* Tất cả dựa trên ý tưởng về miền không gian gọi là tế bào.
+	- Một điện thoại di động sử dụng một tần số trong một ô; di chuyển sinh ra chuyển giao.
+	- Các tần số được tái sử dụng trên các tế bào không liền kề.
+	- Để hỗ trợ thêm điện thoại di động, có thể sử dụng những tế bào nhỏ hơn.
+	
+	![cellular](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/cellular.png)
+	
+<a name="gsm"></a>
+##### 7.3. GSM, một hệ thống 2G
+* Điện thoại di động được chia thành thiết bị cầm tay và thẻ **SIM** (Subscriber Identity Module) với các giấy chứng nhận.
+* Điện thoại di động nói với HLR (Home Location Register) vị trí hiện tại của chúng cho các cuộc gọi đến.
+* Các tế bào theo dõi các điện thoại di động truy cập (trong Visitor LR).
+
+![gsm](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/gsm.png)
+
+* Giao diện không gian được dựa trên các kênh FDM 200 KHz được chia thành các TDM frame 8 khe mỗi 4.615 ms.
+	- Điện thoại di động được chỉ định các khe cắm lên và xuống để sử dụng.
+	- Mỗi khe là 148 bit, cung cấp tốc độ 27.4 kbps.
+	
+	![fdm-channel](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/fdm-channel.png)
+	
+* Một phần cấu trúc khung của GSM.
+
+![gsm-framing-structure](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/gsm-framing-structure.png)
+
+<a name="umts"></a>
+##### 7.4. UMTS, một hệ thống 3G
+* Kiến trúc này là sự phát triển của GSM; có các thuật ngữ khác.
+* Các Gói tin đi đến/đi từ Internet thông qua SGSN/GGSN.
+
+![umts](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/umts.png)
+
+* Giao diện không gian dựa trên CDMA trên các kênh 5 MHz.
+	- Tốc độ trên người dùng < 14.4 Mbps (HSPDA) mỗi 5 MHz.
+	- CDMA cho phép tái sử dụng tần số trên tất cả các tế bào.
+	- CDMA cho phép chuyển giao mềm (kết nối với cả 2 tế bào).
+
+![soft-handoff](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/soft-handoff.png)	
+
+<a name="truyenhinhcap"></a>	
+#### 8. Truyền hình cáp
+
+<a name="internetquacap"></a>
+##### 8.1. Internet qua cáp
+* Internet qua cáp tái sử dụng nhà máy truyền hình cáp.
+	- Dữ liệu được gửi trên cây cáp được chia sẻ từ đầu đến cuối, không phải trên đường thuê riêng cho mỗi thuê bao (DSL).
+
+	![head-end](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/head-end.png)
+
+	- Các dòng dữ liệu up và down được phân bổ cho các kênh tần số không được sử dụng cho các kênh truyền hình:
+	
+		![stream-data](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/stream-data.png)
+
+<a name="modemcap></a>		
+##### 8.2. Modem Cáp
+* Modem Cáp ở các cơ sở khách hàng thực hiện các lớp vật lý của tiêu chuẩn DOCSIS.
+	- QPSK/QAM được sử dụng trong các khe thời gian trên các tần số được chỉ định cho dòng dữ liệu up/down.
+	
+	![cable-modems](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/cable-modems.png)
+	
+<a name="modemcap></a>
+##### 8.3. Cáp vs ADSL
+* Cáp
+	- Ưu:
+		+ Sử dụng cáp đồng trục cho khách hàng (băng thông tốt).
+	- Hạn chế:
+		+ Dữ liệu được broadcast đến tất cả khách hàng (ít an toàn hơn).
+		+ Băng thông được chia sẻ cho khách hàng nên có thể bị thay đổi.
+* ADSL:
+	- Ưu:
+		+ Băng thông dành riêng cho mỗi khách hàng.
+		+ Kết nối point-to-point không broadcast dữ liệu.
+	- Hạn chế:
+		- Sử dụng cáp xoắn đôi cho khách hàng (băng thông thấp hơn).
+		
+	
 ### Tài liệu tham khảo:
 
 [1] http://scisweb.ulster.ac.uk/~kevin/com320/notes.htm
