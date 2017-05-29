@@ -8,9 +8,12 @@
 
 ### Mục lục
 [1. Mục tiêu](#muctieu)
+
 [2. Yêu cầu](#yeucau)
+
 [3. Step 1: Capture a Trace](#step1)
-[4. Step 4: Inspect the Trace](#step2)
+
+[4. Step 2: Inspect the Trace](#step2)
 
 ---
 
@@ -44,6 +47,7 @@
 
 ![icmp-filter](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/icmp-filter.png)
 
+<a name="step2"></a>
 #### 4. Step 2: Inspect the Trace
 * Chọn bất kỳ gói tin nào trong file trace (trong bảng phía trên) để xem chi tiết cấu trúc của nó (trong bảng ở giữa) và các byte tạo thành gói tin đó (trong bảng phía dưới). Bây giờ chúng ta hãy kiểm tra chi tiết của các gói tin. Như trong hình, chúng ta chọn gói tin đầu tiên trong file trace. Chú ý rằng chúng ta đang sử dụng thuật ngữ "gói tin" một cách tùy tiện. Mỗi record bị bắt bởi Wireshark tương ứng chính xác hơn với một frame trong định dạng Ethernet mà mang một gói tin như là payload của nó; Wireshark có thể phân tích cấu trúc này càng nhiều càng tốt.
 * Trong bảng ở giữa, mở các trường Ethernet header (sử dụng dấu mở rộng hoặc biểu tượng "+") để thấy thông tin chi tiết của chúng. Mối quan tâm của chúng ta là Ethernet header, bạn có thể bỏ qua các giao thức ở các tầng cao hơn (trong trường hợp này là IP và ICMP). Chú ý những điều sau:
