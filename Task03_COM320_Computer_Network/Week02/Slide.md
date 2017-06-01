@@ -645,14 +645,14 @@
 	
 		![stream-data](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/stream-data.png)
 
-<a name="modemcap></a>		
+<a name="modemcap"></a>		
 ##### 8.2. Modem Cáp
 * Modem Cáp ở các cơ sở khách hàng thực hiện các lớp vật lý của tiêu chuẩn DOCSIS.
 	- QPSK/QAM được sử dụng trong các khe thời gian trên các tần số được chỉ định cho dòng dữ liệu up/down.
 	
 	![cable-modems](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/cable-modems.png)
 	
-<a name="modemcap></a>
+<a name="capvsadsl"></a>
 ##### 8.3. Cáp vs ADSL
 * Cáp
 	- Ưu:
