@@ -55,7 +55,7 @@
 
 ![send-to](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/send-to.png)
 
-15. Bạn sẽ thấy kết quả thấy thế này:
+15. Bạn sẽ thấy kết quả giống thế này:
 
 ![netinfo-scan-comp](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week02/img/netinfo-scan-comp.png)
 
