@@ -11,14 +11,14 @@
 [1. Lớp Data Link](#lopdatalink)
 
 [2. Các vấn đề thiết kế Lớp Data Link](#cacvandethietkelopdatalink)
-	- [2.1. Frame](#frame)
-	- [2.2. Các dịch vụ có thể có](#cacdichvucotheco)
-	- [2.3. Cách thức đóng frame](#cachthucdongframe)
-		+ [2.3.1. Bộ đếm Byte](#bodembyte)
-		+ [2.3.2. Cơ chế Byte Stuffing](#cochebytestuffing)
-		+ [2.3.3. Cơ chế Bit Stuffing](#cochebitstuffing)	
-	- [2.4. Kiểm soát lỗi](#kiemsoatloi)
-	- [2.5. Kiểm soát luồng](#kiemsoatluồng)
+- [2.1. Frame](#frame)
+- [2.2. Các dịch vụ có thể có](#cacdichvucotheco)
+- [2.3. Cách thức đóng frame](#cachthucdongframe)
+	+ [2.3.1. Bộ đếm Byte](#bodembyte)
+	+ [2.3.2. Cơ chế Byte Stuffing](#cochebytestuffing)
+	+ [2.3.3. Cơ chế Bit Stuffing](#cochebitstuffing)		
+- [2.4. Kiểm soát lỗi](#kiemsoatloi)
+- [2.5. Kiểm soát luồng](#kiemsoatluồng)
 	
 [3. Phát hiện lỗi và Sửa lỗi](#phathienloivasualoi)
 
