@@ -4,7 +4,7 @@
 > 
 > Thực hiện: **Phạm Hoàng Nhu**
 > 
-> Cập nhật lần cuối: **05/06/2017**
+> Cập nhật lần cuối: **07/06/2017**
 
 ### Mục lục
 
@@ -30,10 +30,19 @@
 [4. Các giao thức Data Link sơ cấp](#cacgiaothucdatalinksocap)
 - [4.1. Môi trường lớp truyền dẫn](#moitruongloptruyendan)
 - [4.2. Giao thức dơn giản không tưởng](#giaothucdongiankhongtuong)
+- [4.3. Stop-and-wait - Kênh không có lỗi](#stopandwaitkenhkhongcoloi)
+- [4.4. Stop-and-wait - Kênh có nhiễu](#stopandwaitkenhnhieu)
 
-[5. Giao thức Sliding Window](#giaothucslidingwindow)
+[5. Giao thức Cửa sổ trượt](#giaothuccuasotruot)
+- [5.1. Khái niệm Cửa sổ trượt](#khainiemcuasotruot)
+- [5.2. Cửa sổ trượt một bit](#cuasotruotmotbit)
+- [5.3. Go-Back-N](#gobackn)
+- [5.4. Selective Repeat](#selectiverepeat)
 
-[6. Các giao thức Data Link ví dụ](#cacgiaothucdatalinkvidu)
+[6. Các giao thức Data Link minh họa](#cacgiaothucdatalinkminhhoa)
+- [6.1. Packet over SONET](#packetoversonet)
+- [6.2. PPP](#ppp)
+- [6.3. ADSL](#adsl)
 
 ---
 
@@ -211,6 +220,138 @@
 	![one-way-transfer](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/one-way-transfer.png)
 	
 * Không có lỗi hay kiểm soát luồng.	
+
+<a name="stopandwaitkenhkhongcoloi"></a>
+#### 4.3. Stop-and-wait - Kênh không có lỗi
+* Giao thức (p2) đảm bảo bên gửi không thể vượt qua bên nhận:
+	- Bên nhận trả về một frame giả (ack) khi sẵn sàng.
+	- Chỉ có một frame ra trong một thời điểm - được gọi là dừng và chờ (stop-and-wait).
+	- Có thêm kiểm soát luồng.
+	
+![protocol-2](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/protocol-2.png)
+
+<a name="stopandwaitkenhnhieu"></a>
+#### 4.4. Stop-and-wait - Kênh có nhiễu
+* **ARQ** (Automatic Repeat reQuest) có cơ chế kiểm soát lỗi.
+	- Bên nhận ack các frame mà được vận chuyển chính xác.
+	- Bên gửi thiết lập bộ đếm thời gian và gửi lại các frame nếu không có ack.
+* Để chuẩn xác, các frame và các gói ack phải được đánh số.
+	- Bên nhận không thể yêu cầu truyền lại (do mất mát gói ack hoặc bộ đếm thời gian sớm) từ frame mới.
+	- Đối với Stop-and-wait, 2 số (1 bit) là đủ.
+* Vòng lặp ở bên gửi (p3):
+
+![sender-loop](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/sender-loop.png)
+	
+* Vòng lặp ở bên nhận (p3):
+
+![receiver-loop](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/receiver-loop.png)
+
+<a name="giaothuccuasotruot"></a>
+### 5. Giao thức Cửa sổ trượt 
+
+<a name="khainiemcuasotruot"></a>
+#### 5.1. Khái niệm Cửa sổ trượt
+* Bên gửi duy trì cửa sổ các frame mà nó có thể gửi.
+	- Cần có bộ nhớ đệm lưu chúng để có thể truyền lại.
+	- Cửa sổ tiến tới với các thông báo nhận kế tiếp.
+* Bên nhận duy trì cửa sổ các frame mà nó có thể nhận được.
+	- Cần giữ không gian bộ nhớ đệm cho các gói đến.
+	- Của sổ tiến tới với các gói đến theo thứ tự.
+* Một cửa sổ dịch chuyển tới ở bên gửi và bên nhận.
+	- Ví dụ: kích thước cửa sổ là 1, với một số có liên tiếp 3 bit.
+	
+	![a-sliding-window](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/a-sliding-window.png)
+	
+* Các cửa sổ lớn hơn cho phép kỹ thuật ông dẫn (**Pipelining**) để sử dụng đường kết nối hiệu quả hơn.
+	- Stop-and-wait (w=1) không hiệu quả cho những kết nối dài.
+	- Cửa sổ tốt nhất sẽ phụ thuộc vào độ trễ băng thông bandwidth-delay (BD).
+	- Yêu cầu **w >= 2BD + 1** để có thể đảm bảo sử dụng kết nối cao.
+* Kỹ thuật ống dẫn Pipelining dẫn tới nhiều lựa chọn khác nhau để xử lý lỗi/bộ đệm.
+	- Chúng ta sẽ xem xét **Go-Back-N** và **Selective Repeat**.
+* Kỹ thuật tạm thời hoãn các gói ack đi ra ngoài để chúng có thể nối vào frame dữ liệu đi ra ngoài kế tiếp được gọi là **Piggybacking**.
+
+<a name="cuasotruotmotbit"></a>
+#### 5.2. Cửa sổ trượt một bit
+* Truyền dữ liệu theo cả hai hướng với Stop-and-wait.
+	- Các gói Ack được piggyback trên các frame truyền ngược lại để tăng hiệu quả.
+	- Xử lý lỗi truyền tải, kiểm soát luồng, bộ đếm thời gian sớm.
+* Mỗi node là bên gửi và bên nhận (p4):
+	
+	![protocol-4](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/protocol-4.png)
+	
+	![protocol-4-2](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/protocol-4-2.png)
+	
+* Hai trường hợp cho thấy sự tương tác khéo léo xuất hiện trong p4:	
+	- Bắt đầu đồng thời (bên phải) tạo ra hoạt động chính xác nhưng chậm so với bình thường (bên trái) do lặp lại truyền dẫn.
+	
+![2-case](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/2-case.png)
+
+<a name="gobackn"></a>
+#### 5.3. Go-Back-N
+* Bên nhận chỉ chấp nhận/ack các frame đến theo thứ tự:
+	- Loại bỏ các frame theo sau một frame thiếu/lỗi.
+	- Bên gửi tạm ngưng và gửi lại tất cả các frame còn tồn tại.
+
+	![go-back-n](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/go-back-n.png)
+	
+* Các cân nhắc khi dùng Go-Back-N:
+	- Phương pháp đơn giản cho bên nhận; chỉ cần 1 frame.
+	- Tốn băng thông kết nối vì lỗi với các cửa sổ lớn; toàn bộ cửa sổ sẽ được truyền lại.
+	
+<a name="selectiverepeat"></a>
+#### 5.4. Selective Repeat
+* Bên nhận chấp nhận các frame bất kỳ chỗ nào trong cửa sổ nhận.
+	- Ack bị dồn cho biết frame có thứ tự cao nhất.
+	- **NAK** (negative Ack) làm cho bên gửi truyền lại một frame bị thiếu trước khi bị ngưng để gửi lại cửa sổ.
+	
+	![selective-repeat](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/selective-repeat.png)
+	
+* Những cân nhắc khi dùng Selective Repeat:
+	- Phức tạp nhiều hơn Go-Back-N do bộ đệm ở bên nhận và nhiều bộ đếm thời gian ở bên gửi.
+	- Việc sử dụng băng thông kết nối hiệu quả hơn vì chỉ có những frame mất mát mới được gửi lại (với tỷ lệ lỗi thấp).
+	* Để chuẩn xác, yêu cầu:
+		- Các số liên tiếp (s) ít nhất bằng hai lần cửa sổ (w):
+		
+	![s-2w](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/s-2w.png)
+
+<a name="cacgiaothucdatalinkminhhoa"></a>
+### 6. Các giao thức Data Link minh họa
+
+<a name="packetoversonet"></a>
+#### 6.1. Packet over SONET
+* Packet over SONET là phương pháp được sử dụng để mang các gói tin IP qua SONET các kết nối cáp quang.
+	- Sử dụng PPP (Point-to-Point Protocol) để đóng frame.
+	- Giao thức được sử dụng phổ biến nhất trên các kết nối cáp quang diện rộng tạo nên hệ thống mạng liên lạc xương sống (back-bone).
+	
+	![packet-over-sonet](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/packet-over-sonet.png)
+
+<a name="ppp"></a>	
+#### 6.2. PPP
+* PPP (Point-to-Point Protocol) là một phương pháp chung để vận chuyển các gói tin qua các đường truyền dẫn.
+	- Đóng frame sử dụng một cờ (0x7E) và kỹ thuật byte stuffing.
+	- "Unnumbered mode" (dịch vụ vô hướng không có thông báo nhận) được sử dụng để mang các gói tin IP.
+	- Phát hiện lỗi với checksums.
+	
+	![ppp](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/ppp.png)
+	
+* Một giao thức điều khiển kết nối làm cho kết nối PPP up/down.
+	
+![link-control](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/link-control.png)
+
+<a name="adsl"></a>
+#### 6.3. ADSL (Asymmetric Digital Subscriber Line)
+* Được sử dụng rộng rãi cho Internet băng thông rộng qua các đường dây thuê bao (Local loop).
+	- ADSL chạy từ modem (khách hàng) đến DSLAM (ISP).
+	- Các gói tin IP được gửi qua PPP và AAL5/ATM.
+	
+	![adsl](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/adsl.png)
+
+* Dữ liệu PPP được gửi trong AAL5 frame trên các ô ATM:
+	- ATM là một lớp liên kết sử dụng các ô (cell) có kích thước ngắn, cố định (53 byte); mỗi ô có một bộ định dạng mạch ảo.
+	- AAL5 là một định dạng để gửi các gói tin qua ATM.
+	- PPP frame được chuyển đổi sang một AAL5 frame (PPPoA).
+	
+	![aal5](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/aal5.png)
 	
 ---
 
