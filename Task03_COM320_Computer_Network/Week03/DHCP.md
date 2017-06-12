@@ -22,7 +22,7 @@
 <a name="muctieu"></a>
 ### 1. Mục tiêu
 * Hiểu được cách hoạt động của **DHCP** (Dynamic Host Configuration Protocol). File trace ở đây:
-<www.scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/trace-dhcp.pcap>
+www.scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/trace-dhcp.pcap
 
 <a name="thietlapmang"></a>
 ### 2. Thiết lập mạng
@@ -44,7 +44,7 @@
 	
 	![ipconfig](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/ipconfig.png)
 	
-	3. Một khi bạn đã bắt được một vài lưu lượng DHCP, hãy dừng lại.
+3. Một khi bạn đã bắt được một vài lưu lượng DHCP, hãy dừng lại.
 
 <a name="step2"></a>	
 ### 4 Step 2: Inspect the Trace
