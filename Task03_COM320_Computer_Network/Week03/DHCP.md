@@ -15,13 +15,14 @@
 [3. Step 1: Capture a Trace](#step1)
 
 [4. Step 2: Inspect the Trace](#step2)
+
 ---
 
 
 <a name="muctieu"></a>
 ### 1. Mục tiêu
 * Hiểu được cách hoạt động của **DHCP** (Dynamic Host Configuration Protocol). File trace ở đây:
-<scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/trace-dhcp.pcap>
+<www.scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/trace-dhcp.pcap>
 
 <a name="thietlapmang"></a>
 ### 2. Thiết lập mạng
@@ -41,7 +42,7 @@
 	- **Windows:** Gõ lệnh `ipconfig /release` và sau đó là `ipconfig /renew`.
 	- Nếu trên **Linux:** Hãy tìm tên của interface mạng chính bằng cách gõ `ifconfig` và quan sát kết quả. Interface này có thể gọi là **eth0** hoặc là một thứ gì khác. Bây giờ sử dụng lệnh `dhclient` để giải phóng địa chỉ IP đã được cấp và sau đó thay một địa chỉ mới. Ví dụ, hãy gõ, `sudo dhclient -r eth0` để giải phóng địa chỉ và sau đó là `sudo dhclient eth0` để thay một địa chỉ khác.
 	
-	![ipconfig](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/ifconfig.png)
+	![ipconfig](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/ipconfig.png)
 	
 	3. Một khi bạn đã bắt được một vài lưu lượng DHCP, hãy dừng lại.
 
