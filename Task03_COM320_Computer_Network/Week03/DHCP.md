@@ -52,6 +52,19 @@ www.scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/trace-dhcp.pcap
 * Hãy tìm quá trình trao đổi DHCP ngắn (trong gói tin DHCP Request và gói tin DHCP Ack) trong file trace. Chọn gói tin DHCP Request, và quan sát chồng giao thức để xem các DHCP message được mang như thế nào. Giao thức liên kết có thể là Ethernet, và giao thức cao hơn là IP. Sau đó đến UDP, vì thế mỗi DHCP message được chứa trong gói tin UDP. Trên đầu UDP, Wireshark có thể báo là **BOOTP** (Bootstrap Protocol) thay vì DHCP. Ở đây khó hiểu một chút, nhưng DHCP được thực hiện như là một phần mở rộng của một giao thức cũ được gọi là BOOTP. Bạn có thể nghĩ phần BOOTP như là DHCP header và message. Xem ví dụ ở dưới:
 
 ![bootstrap](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/bootstrap.png)
+
+* Mở rộng phần BOOTP (DHCP) (sử dụng biểu tượng dấu "+" mở rộng) để xem chi tiết của một DHCP Request message. Có nhiều trường, nhưng chúng ta chỉ làm rõ một vài trường hơn là xem chúng hết. Những trường này đều được chứa trong tất cả DHCP message, mặc dù chúng có những giá trị khác nhau trong những message khác nhau.
+	- Một Message bắt đầu bằng một **Message Type**. Nó là một **Boot Request**, được đùng để cho tất cả DHCP message gửi từ máy tính bạn đến một DHCP server.
+	- Sau một vài trước là một trường **Transaction ID**. Tất cả gói tin DHCP trong một cuộc trao đổi cụ thể giữa một client và server mang cùng một Transaction ID; đó là cách để cả hai thiết bị đầu cuối biết rằng các gói tin thuộc về cuộc trao đổi chứ không phải là một hoạt động DHCP khác xảy ra đồng thời.
+	- Có một số trường địa chỉ IP. Các trường này được sử dụng để chứa các địa chỉ chẳng hạn như địa chỉ mà máy tính đang được gán.
+	- Có một trường **Magic Cookie**. Nó chứa một giá trị cho thấy phần còn lại của message chứa một loạt các tùy chọn DHCP. Tức là, đây là thực sự là một DHCP message, không phải là một BOOTP message.
+	- Mỗi tùy chọn DHCP thì độc lập, với một loại mã thể hiện những gì nó đại diện, cùng với một độ dài và giá trị. Tùy chọn đầu tiên là **DHCP message Type**, cho biết loại DHCP message đang được mang. Những tùy chọn khác sẽ thay đổi với mỗi loại DHCP message. Ví dụ, một DHCP Request sẽ có một tùy chọn **Requested IP Address** để yêu cầu một địa chỉ cụ thể, với một **DHCP Ack** sẽ có một tùy chọn **IP Address Lease Time** cho biết địa chỉ IP này đã được gán bao lâu.
+
+* Bây giờ hãy chọn một gói tin DHCP Ack và so sánh các trường BOOTP. Chúng tôi sẽ hỏi những câu hỏi về những trường này trong phần tiếp theo, nhưng bây giờ chúng tôi muốn bạn quan sát rằng gói DHCP Ack có cùng định dạng chung, nhưng có các giá trị khác nhau trong mỗi trường và mạng các tùy chọn DHCP khác nhau. 
+* Bạn có thể duyệt các tùy chọn trong DHCP Request và Ack để tìm hiểu về DHCP. Bạn có thể thấy, ví dụ, địa chỉ IP được server gán bao lâu, tính bằng giây, phút, giờ hoặc bằng giờ. Bạn cũng có thể xem các tham số cấu hình khác được gán bởi DHCP server, chẳng hạn địa chỉ IP của domain name server và Router, subnet mask, tên miền của máy chủ và nhiều hơn nữa.
+* Bạn cũng có thể tạo toàn bộ chuỗi DHCP message mà được trao đổi để thiết lập mạng của bạn. Nếu có thể sẽ đơn giản như đoạn trao đổi ngắn với Request và Ack, hoặc nó có thể là một đoạn trao đổi đầy đủ với Discover, Offer, Request và Ack. Nó có thể có những message bổ sung chẳng hạn như Release, và nó cũng có thể có nhiều các message (vì dụ như hai hay nhiều Offer hay Ack) do có nhiều các DHCP server. 
+	
+	
 	
 ---
 
