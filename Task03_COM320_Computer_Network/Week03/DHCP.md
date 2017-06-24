@@ -16,8 +16,11 @@
 
 [4. Step 2: Inspect the Trace](#step2)
 
----
+[5. Step 3: Details of DHCP Messages](#step3)
 
+[6. Step 4: DHCP Message Addressing](#step4)
+
+---
 
 <a name="muctieu"></a>
 ### 1. Mục tiêu
@@ -47,7 +50,7 @@ www.scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/trace-dhcp.pcap
 3. Một khi bạn đã bắt được một vài lưu lượng DHCP, hãy dừng lại.
 
 <a name="step2"></a>	
-### 4 Step 2: Inspect the Trace
+### 4. Step 2: Inspect the Trace
 * Ở bước này và các bước tiếp theo, chúng ta chỉ xem xét quá trình trao đổi DHCP ngắn được mô tả ở trên. Điều này là do lưu lượng mà bạn bắt được có thể thay đổi qua các thiết lập. Bạn có thể có một vài gói tin DHCP trên một mạng tĩnh (quiet) hoặc nhiều gói tin DHCP trên một mạng bận bộn (busy) (đặc biệt nếu một lớp học đang thực hiện lab này!). Các chi tiết của các gói tin DHCP có thể thay đổi tùy thuộc vào cách máy tính thực hiện DHCP. Có thể có nhiều gói tin cùng một loại trong một quá trình trao đổi do các server sao chép, và cũng có thể có các gói tin DHCP khác loại.
 * Hãy tìm quá trình trao đổi DHCP ngắn (trong gói tin DHCP Request và gói tin DHCP Ack) trong file trace. Chọn gói tin DHCP Request, và quan sát chồng giao thức để xem các DHCP message được mang như thế nào. Giao thức liên kết có thể là Ethernet, và giao thức cao hơn là IP. Sau đó đến UDP, vì thế mỗi DHCP message được chứa trong gói tin UDP. Trên đầu UDP, Wireshark có thể báo là **BOOTP** (Bootstrap Protocol) thay vì DHCP. Ở đây khó hiểu một chút, nhưng DHCP được thực hiện như là một phần mở rộng của một giao thức cũ được gọi là BOOTP. Bạn có thể nghĩ phần BOOTP như là DHCP header và message. Xem ví dụ ở dưới:
 
@@ -62,10 +65,60 @@ www.scisweb.ulster.ac.uk/~kevin/com320/labs/wireshark/trace-dhcp.pcap
 
 * Bây giờ hãy chọn một gói tin DHCP Ack và so sánh các trường BOOTP. Chúng tôi sẽ hỏi những câu hỏi về những trường này trong phần tiếp theo, nhưng bây giờ chúng tôi muốn bạn quan sát rằng gói DHCP Ack có cùng định dạng chung, nhưng có các giá trị khác nhau trong mỗi trường và mạng các tùy chọn DHCP khác nhau. 
 * Bạn có thể duyệt các tùy chọn trong DHCP Request và Ack để tìm hiểu về DHCP. Bạn có thể thấy, ví dụ, địa chỉ IP được server gán bao lâu, tính bằng giây, phút, giờ hoặc bằng giờ. Bạn cũng có thể xem các tham số cấu hình khác được gán bởi DHCP server, chẳng hạn địa chỉ IP của domain name server và Router, subnet mask, tên miền của máy chủ và nhiều hơn nữa.
-* Bạn cũng có thể tạo toàn bộ chuỗi DHCP message mà được trao đổi để thiết lập mạng của bạn. Nếu có thể sẽ đơn giản như đoạn trao đổi ngắn với Request và Ack, hoặc nó có thể là một đoạn trao đổi đầy đủ với Discover, Offer, Request và Ack. Nó có thể có những message bổ sung chẳng hạn như Release, và nó cũng có thể có nhiều các message (vì dụ như hai hay nhiều Offer hay Ack) do có nhiều các DHCP server. 
+* Bạn cũng có thể tạo toàn bộ chuỗi DHCP message mà được trao đổi để thiết lập mạng của bạn. Nếu có thể sẽ đơn giản như đoạn trao đổi ngắn với Request và Ack, hoặc nó có thể là một đoạn trao đổi đầy đủ với Discover, Offer, Request và Ack. Nó có thể có những message bổ sung chẳng hạn như Release, và nó cũng có thể có nhiều các message (vì dụ như hai hay nhiều Offer hay Ack) do có nhiều các DHCP server. Làm phúc tạp cuộc trao đổi bằng máy tính của bạn bằng cách có thể bắt các lưu lượng DHCP xảy ra đồng thời thời những máy tính khác. Bạn có thể sử dụng Transaction ID để phân biệt các cuộc trao đổi khác nhau, và hãy nhìn vào địa chỉ Ethernet nguồn để xem những DHCP message nào được gửi bởi máy tính của bạn. Có thể các lưu lượng DHCP khác được trộn vào với cuộc trao đổi của bạn.
+
+<a name="step3"></a>	
+### 5. Step 3: Details of DHCP Messages
+* Hãy dành thời gian tìm hiểu DHCP. Chú ý vị trí của Ethernet, IP, UDP và khối giao thức BOOTP.
+* Trả lời những câu hỏi sau dựa trên việc xem xét các trường BOOTP/DHCP trong cả hai gói DHCP Request và DHCP Ack. Câu trả lời có ở trang tiếp theo.
+	1. Hai giá trị nào trong trường **BOOTP Message Type**?
+	2. Trường Transaction ID dài bao nhiêu? Hãy cho biết liệu có khả năng các hoạt động DHCP xảy ra đồng thời được thực hiện bởi các máy tính khác nhau sẽ xảy ra để chọn cùng một Transaction ID.
+	3. Tên của trường mang địa chỉ IP đang được gán cho client? Bạn sẽ tìm thấy trường này được điền vào DHCP Ack, vì message đó đang hoàn thành nhiệm vụ.
+	4. Giá trị Magic Cookie nào là viết tắt cho DHCP?
+	5. Tùy chọn DHCP đầu tiên là DHCP Message Type. Giá trị nào viết tắt cho loài này?
+	6. DHCP Request thường sẽ có một tùy chọn **Client Identifier**. Hãy xem giá trị của tùy chọn này. Nó định danh Client như thế nào? Hãy đoán xem.
+	7. DHCP Ack thường sẽ có một tùy chọn **Server Identifier**. Hãy xem giá trị của tùy chọn này. Nó định danh Server như thế nào? Hãy đoán xem.
+	8. Giá trị nào đại diện cho tùy chọn **Requested IP Address**? **IP Address Lease Time**?
+	9. Làm sao để bên nhận DHCP message biết được rằng nó đã đạt đến tùy chọn cuối cùng?
 	
+* Trả lời:
 	
+	![structure-dhcp-message](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/structure-dhcp-message.png)
 	
+	1. Hai giá trị là **Boot Request** (1) và **Boot Reply** (2).
+	2. Transaction ID dài 4 byte. Do đó rất khó có khả năng xảy ra va chạm trong một số tương đối nhỏ các quá trình DHCP diễn ra đồng thời (cho đến khi con đó tiến đến 216!).
+	3. Trường "**Your (client) IP address**" mang địa chỉ IP đang được gán cho client.
+	4. Giá trị Magic Cookie DHCP là **0x63825363**.
+	5. Giá trị 53 viết tắt cho DHCP Message Type.
+	6. Thông thường, Client Identifier mang địa chỉ Ethernet của Client, những có thể sử dụng một số loại định danh khác (ví dụ như hostname, serial number).
+	7. Thông thường, Server Identifier mang địa chỉ IP của DHCP Server, những có thể sử dụng một số loại định danh khác.
+	8. Giá trị 50 viết tắt cho Request IP Address và 51 là cho IP Address Lease Time.
+	9. Phần tùy chọn cuối cùng của DHCP được định danh bằng một tùy chọn DHCP gọi là **End** có giá trị là 255.
+	
+<a name="step4"></a>	
+### 6. Step 4: DHCP Message Addressing
+* Bây giờ chúng ta sẽ xem cách DHCP message được đánh địa chỉ đến các máy tính tại các lớp UDP, IP và Ethernet. Điều này rất thú vị bởi vì DHCP được dùng để gán địa chỉ IP - một máy tính yêu cầu một địa chỉ DHCP mà có thể không có địa chỉ IP của riêng nó cũng không biết địa chỉ IP của DHCP server.
+* Hãy bắt đầu bằng việc chọn một gói tin DHCP Request và xem chi tiết UDP của nó trong bảng giữa của Wireshark. Chúng ta sẽ chỉ xem DHCP Request message để giữ mọi thứ đơn giản, vì các chi tiết đánh địa chỉ sẽ khác nhau đối với các DHCP message khác. Câu trả lời nằm ở trang tiếp theo.
+	1. Port nào mà DHCP client sử dụng, và port nào mà DHCP server sử dụng?
+	Port rất quan trọng bởi vì các UDP message được đánh địa chỉ dùng port. Cả hai port này đều nằm trong Request trong trường port nguồn và đích (và bạn cũng sẽ thấy chúng trong Ack).
+	
+* Bây hãy xem các địa chỉ IP trong IP protocol header của gói tin để đến câu hỏi tiếp theo. Đừng nhìn vào trong các trường BOOTP để xem các tham số DHCP, vì chúng ta quan tâm đến cách mà các DHCP message được đánh địa chỉ tại các lớp giao thức thấp. Khi yêu cầu được gửi đi, máy tính của bạn không có địa chỉ IP và có thể không biết cả địa chỉ IP của DHCP server, vì thế việc đánh địa chỉ IP sẽ khác với một gói tin IP thông thường.
+	2. Địa chỉ IP nguồn nào được đặt trong Request message? Nó là một giá trị đặc biệt có nghĩa là "host này nằm trong mạng này" (this host on this network) được dùng để khởi tạo.
+	3. Địa chỉ IP đích nào được đặt trong Request message? Nó cũng là một giá trị được dành riêng, được thiết kế để truy cập đến DHCP server ở bất cứ đâu trong mạng nội bộ.
+	
+* Cuối cùng, xem địa chỉ Ethernet để trả lời câu hỏi tiếp theo.
+	4. Địa chỉ Ethernet nguồn nào được đặt trong Request message và địa chỉ Ethernet đích nào được đặt trong Request message? Một trong những địa chỉ này là một địa chỉ dự trữ.
+
+Xem việc đánh địa chỉ sẽ giúp bạn hiểu được tại sao máy tính của bạn có thể ghi lại lưu lượng DHCP của nhiều máy tính nội bộ trong bản trace. Do việc đánh địa chỉ chưa được thiết lập nên nhiều DHCP message được gửi đến tất cả các máy tính trong máy nội bộ. Điều này để chắc chắn mỗi máy tính để nhận được các DHCP message dành cho chúng, nhưng nó cũng đặt ra một khó khăn: một máy tính có thể nhận được các DHCP message mà dành cho các máy tính khác.
+	5. Làm cách nào để một máy tính hoạt động với một DHCP message mà nó nhận được dành cho nó cũng như một phản hồi đến DHCP Request message của nó mà không phải là phản hồi dành cho một máy tính không? Gợi ý: Nếu bạn không chắc chắn thì hãy quay lại các trường mà bạn đã xem xét ở Bước 2.
+	
+* Trả lời:
+	1. DHCP client (máy tính của bạn) sử dụng UDP port 68 và DHCP server sử dụng UDP port 67.
+	2. Địa chỉ IP nguồn là 0.0.0.0. Nó là một địa chỉ đặc biệt được dùng trong suốt quá trình khởi tạo địa chỉ.
+	3. Địa chỉ IP đích là 255.255.255.255. Nó là địa chỉ broadcast, có nghĩa là message được gửi đi cho tất cả các máy tính nằm trong mạng. (Không thể sử dụng một địa chỉ broadcast subnet bị giới hạn, ví dụ như, 192.168.255.255, vì client chưa biết subnet mask).
+	4. Địa chỉ Ethernet nguồn đơn giản chính là địa chỉ Ethernet của chính máy tính của bạn, vì nó đã được gán cho NIC của bạn. Địa chỉ Ethernet đích là ff:ff:ff:ff:ff:ff, địa chỉ broadcast Ethernet được đặt riêng, vì thế gói tin đi đến tất cả các máy tính có trong máy nội bộ.
+	5. Các DHCP message trong một cuộc trao đổi thì mang cùng một Transaction ID. Như thế, một máy tính tìm kiếm một gói phản hồi DHCP chẳng hạn như một gói Ack với một Transaction ID mà khớp với giá trị nằm trong DHCP message trước chẳng hạn như gói Request (Đây là phần bổ sung cho bất cứ bộ lọc địa chỉ Ethernet: nếu phản hồi là unicast thì nó sẽ lấy địa chỉ Ethernet của máy tính làm địa chỉ đích của nó).
+		
 ---
 
 ### Tài liệu tham khảo:
