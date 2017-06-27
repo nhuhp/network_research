@@ -20,6 +20,8 @@
 
 [6. Step 4: DHCP Message Addressing](#step4)
 
+[7. Viewing DHCP Client and DNS Client Status](#viewingdhcpclientandnsclientstatus)
+
 ---
 
 <a name="muctieu"></a>
@@ -118,6 +120,43 @@ Xem việc đánh địa chỉ sẽ giúp bạn hiểu được tại sao máy t
 	3. Địa chỉ IP đích là 255.255.255.255. Nó là địa chỉ broadcast, có nghĩa là message được gửi đi cho tất cả các máy tính nằm trong mạng. (Không thể sử dụng một địa chỉ broadcast subnet bị giới hạn, ví dụ như, 192.168.255.255, vì client chưa biết subnet mask).
 	4. Địa chỉ Ethernet nguồn đơn giản chính là địa chỉ Ethernet của chính máy tính của bạn, vì nó đã được gán cho NIC của bạn. Địa chỉ Ethernet đích là ff:ff:ff:ff:ff:ff, địa chỉ broadcast Ethernet được đặt riêng, vì thế gói tin đi đến tất cả các máy tính có trong máy nội bộ.
 	5. Các DHCP message trong một cuộc trao đổi thì mang cùng một Transaction ID. Như thế, một máy tính tìm kiếm một gói phản hồi DHCP chẳng hạn như một gói Ack với một Transaction ID mà khớp với giá trị nằm trong DHCP message trước chẳng hạn như gói Request (Đây là phần bổ sung cho bất cứ bộ lọc địa chỉ Ethernet: nếu phản hồi là unicast thì nó sẽ lấy địa chỉ Ethernet của máy tính làm địa chỉ đích của nó).
+	
+<a name="viewingdhcpclientandnsclientstatus"></a>	
+### 7. Viewing DHCP Client and DNS Client Status
+* Bạn sẽ dùng bảng điều khiển Services để xem trạng thái của các dịch vụ DNS Client và DHCP Client, và sau đó dùng command line để xem các thông tin tương tự.
+	1. Nhấn và giữ **"Windows" key** và nhấn phím "**R**". Trong hộp thoại, gõ **servies.msc** và nhấn Enter để khởi động bảng điều khiển Dịch vụ (Services). Bảng điều khiển Services khác với tab Services trong Task Manager, cho phép bạn dừng hoặc khởi động một dịch vụ và xem trạng thái của nó nhưng không thay đổi các thuộc tính khác, chẳng hạn như kiểu khởi động và cách đăng nhập vào hệ thống.
+	
+	![services-control-panel](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/services-control-panel.png)
+	
+	2. Lăn xuống cho đến khi bạn tìm thấy dịch vụ DHCP Client. Chú ý rằng trạng thái của nó là **Started**. Nhấp đôi vào DHCP Client để mở thuộc tính của nó. 
+	
+	![dhcp-properties](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/dhcp-properties.png)
+	
+	3. Click vào mũi tên danh của danh sách kiểu khởi động (Startup type) để xem các tùy chọn sẵn có. Bạn không nên vô hiệu hóa (Disable) hay Dừng (Stop) (trừ khi bạn khởi động nó lại) DHCP Client bởi vì nó được dùng để đăng kí và cập nhật DNS record của máy tính bạn. vì thế ngay cả khi bạn không lấy địa chỉ IP thông qua DHCP, DHCP Client vẫn chạy. Phía trên danh sách cách kiểu khởi động (Startup type), chú ý đường dẫn đến file thực thi (executable file). Khi tìm DHCP Client trong tab Processes trong Task Manager, bạn sẽ tìm thấy đường dẫn này.
+	4. Click vào tab **Log On**. Hầu hết các dịch vụ đều được khởi động bằng cách sử dụng một tài khoản đặc biệt: Local Service, Local System, hoặc Network Service. Mật khẩu sẽ được tự động thay đổi theo định kỳ vì lý do bảo mật, nên bạn không cần phải đổi nó.
+	
+	![dhcp-client-log-on-tab](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/dhcp-client-log-on-tab.png)
+	
+	5. Click vào tab **Recovery**. Bạn sẽ sử dụng tab này để chỉ định các hoạt động sẽ thực hiện nếu dịch vụ này fail. Trong hầu hết các trường hợp, dịch vụ sẽ cố gắng khởi động hai lần. Bạn có thể chỉ rõ các hành động để máy tính thực hiện (chẳng hạn khởi động lại) nếu dịch vụ gặp lỗi khi cố gắng khởi động.
+	
+	![dhcp-client-recovery-tab](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/dhcp-client-recovery-tab.png)
+	
+	6. Click vào tab **Dependencies**, tại đây bạn có thể thấy các tiến trình hoặc dịch vụ khác mà dịch vụ này phụ thuộc vào để chạy và các tiến trình hoặc dịch vụ khác phụ thuộc vào dịch vụ này. Trước khi dừng một dịch vụ mà bạn nghĩ là không cần thiết, hãy kiểm tra các thành phần phụ thuộc để chắc rằng các dịch vụ khác mà bạn cần thì không bị ảnh hưởng. Sau đó click Cancel.
+	
+	![dhcp-client-dependencies-tab](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/dhcp-client-dependencies-tab.png)
+	
+	7. Tiếp theo, hãy kiểm tra các thuộc tính của DNS Client. Phần lớn chúng giống với DHCP Client, ngoại trừ một lệnh svchost.exe khác được sử dụng để chạy DNS. Cũng lưu ý rằng tên của dịch vụ được biểu thị là Dnscache. Khi bạn hoàn thành, hãy đóng bảng điều khiển Dịch vụ.
+	8. Mở cmd. Để xem trạng thái của các trạng thái từ command line, bạn sử dụng lệnh **sc**. Gõ `sc query` và nhấn Enter để xem tất cả các dịch vụ đang chạy.
+	
+	![sc](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/sc.png)
+	
+	Để xem trạng thái của DHCP, gõ `sc query dhcp` và nhấn Enter, và để xem trạng thái của DNS, gõ `sc query dnscache` và nhấn Enter.
+	
+	![sc-query-dhcp](https://github.com/nhuhp/network_research/blob/master/Task03_COM320_Computer_Network/Week03/img/sc-query-dhcp.png)
+	
+	9. Đôi khi việc khởi động lại một dịch vụ là cần thiết. Một lần khởi động lại máy tính làm được việc này, nhưng bạn cũng có thể làm được trong bảng điều khiển Dịch vụ hoặc từ command line. Bạn có thể gõ `sc stop dhcp` và nhấn Enter. Ở đây trạng thái của DHCP sẽ hiển thị là STOP-PENDING. Nếu nó hoạt động, gõ `sc query dhcp` và nhấn Enter thì bạn sẽ thấy rằng DHCP đã bị dừng. Gõ `sc start dhcp` và nhấn Enter để khởi động lại dịch vụ.
+	
+	
 		
 ---
 
